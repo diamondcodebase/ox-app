@@ -1,6 +1,50 @@
 import Image from "next/image";
+import { Post } from "@/components/Post";
+import PostC from "@/components/PostC";
+import PostD from "@/components/PostDefault";
+// import the Link Tag
+import Link from "next/link";
+
+// Create own component
+function Text(){
+  return <p>This is text!</p>
+}
+
+function TextIn( {content}){
+  return <p>{content}</p>
+}
+
+function TextS( {content ,strong}){
+  if (strong) {
+    return <strong>{content}</strong>
+  } else {
+    return <p>{content}</p>
+  }
+}
 
 export default function Home() {
+  // Dynamic content rendering
+  const posts = [
+    {
+      title:"My Dynamic Post", 
+      author:"Diamond Dai", 
+      content:"This is an example of dynamic rendering", 
+      following:true
+    },
+    {
+      title:"My Dynamic Post 2", 
+      author:"Diamond Dai", 
+      content:"This is the second dynamic rendering", 
+      following:false
+    },
+    {
+      title:"My Dynamic Post 3", 
+      author:"Diamond Dai", 
+      content:"This is the third dynamic rendering", 
+      following:false
+    }
+  ];
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -28,34 +72,35 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
+      {/* <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
         <Image
           className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
+          src="/plant_bg.jpg"
           alt="Next.js Logo"
           width={180}
           height={37}
           priority
         />
-      </div>
+      </div> */}
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <Link
+          //href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+          href="/quiz"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
+          //target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
+            Bible OX{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
+            Take a challenge to know more about the Bible!
           </p>
-        </a>
+        </Link>
 
         <a
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
@@ -64,13 +109,13 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
+            Astronomy OX{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
+            Learn more about astronomy!
           </p>
         </a>
 
@@ -108,6 +153,31 @@ export default function Home() {
           </p>
         </a>
       </div>
+      <div>
+        <Text />
+        <TextIn content="Hello World" />
+        <TextS content="My name is Diamond" strong={true} />
+        <TextS content="This is my first React.js app" strong = {false} />
+      </div>
+      <div>
+        <Post 
+          title="Post Test" 
+          author="Diamond"
+          content="It should be a good start" />
+        <PostC
+          title="PostC Test"
+          author="David"
+          content="Let us learning coding together!"
+          following={true}
+        />
+      </div>
+      <div>
+        { posts.map((content, idx) => {
+          return <PostC {...content} key={idx} />
+        }) }
+      </div>
     </main>
   );
 }
+
+// Using posts.map allows us to do is essentially iterate through every single element
