@@ -6,9 +6,9 @@ export default function User( {params} ) {
     const router = useRouter();
 
     return (
-        <div>
-            <h1>{ params.id }</h1>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <div className='text-3xl font-bold'>{ params.id }</div>
             <button onClick={ router.back }>Go Back</button>
-        </div>
+        </main>
     );
 }

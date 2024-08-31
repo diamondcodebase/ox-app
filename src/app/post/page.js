@@ -34,8 +34,8 @@ export default function Post() {
     }
 
     return (
-        <div>
-            <h1>Posts</h1>
+        <div className='text-3xl font-bold'>
+            <div className='text-3xl font-bold'>Posts</div>
             <div>
                 <input 
                     type="text" 
