@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState } from "react"; // when the state changes, the web will be rendering again
 import { useRouter } from "next/navigation";
 
 export default function User() {
