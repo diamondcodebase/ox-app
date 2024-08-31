@@ -34,27 +34,27 @@ export default function Post() {
     }
 
     return (
-        <div className='text-3xl font-bold'>
+        <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className='text-3xl font-bold'>Posts</div>
-            <div>
+            <div className="block w-5/6">
                 <input 
                     type="text" 
                     value={author} 
-                    className="block w-5/6 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     onChange={(e) => setAuthor(e.target.value)} 
                     placeholder="Author"
                 />
                 <input 
                     type="text" 
                     value={title} 
-                    className="block w-5/6 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     onChange={(e) => setTitle(e.target.value)}
                     placeholder="Title"
                 />
                 <input 
                     type="text" 
                     value={content}
-                    className="block w-5/6 rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
+                    className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" 
                     onChange={(e) => setContent(e.target.value)} 
                     placeholder="Content"
                 />
@@ -65,7 +65,7 @@ export default function Post() {
                 (<PostC {...post} key={ idx = Math.random() } />)
             )}
             </div>
-        </div>
+        </main>
 
 
     );
