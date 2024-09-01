@@ -8,7 +8,8 @@ export default function User( {params} ) {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
             <div className='text-3xl font-bold'>{ params.id }</div>
-            <button onClick={ router.back }>Go Back</button>
+            <button onClick={ router.back }>Back</button>
+            <button><a href="../">Home</a></button>
         </main>
     );
 }

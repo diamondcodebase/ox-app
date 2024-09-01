@@ -20,7 +20,8 @@ export default function User() {
                 value={userId} 
                 onChange={ (e) => setUserId(e.target.value)}
             />
-            <button onClick= {navigate }>Go to Profile</button>
+            <button onClick={ router.back }>Back</button>
+            <button><a href="../">Home</a></button>
         </div>
     );
 }
