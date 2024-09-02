@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import QuestionBox from "@/components/QuestionBox";
 import AnswerBox from "@/components/AnswerBox";
 import ImageButton from "@/components/ImageButton";
-import CustomButton from "@/components/CustomButton";
 import CustomButtonV from "@/components/CustomButtonV";
+import BasicButtonPanel from "@/components/BasicButtonPanel"
 import Image from "next/image";
 
 export default function BibleQuiz() {
@@ -65,7 +65,6 @@ export default function BibleQuiz() {
                 visible = {!isGameStarted}
                 onClickFn ={ startGame }
             />
-            {/* <button type='submit' id='startButton'>Start Game</button> */}
             <QuestionBox 
                 question={currentQuestions[0].question} 
                 visible={isQuestionVisible} 
@@ -74,18 +73,6 @@ export default function BibleQuiz() {
                 showAnswer={showAnswer}
             />
             <div className='flex justify-center mb-4 flex-row items-center'>
-                {/* <button 
-                    className='text-4xl text-green-900 p-1.5'
-                    onClick={() => getShowAnswer(true)}
-                >
-                    <Image
-                        src="/ThisIsRight.png"
-                        alt="Right"
-                        width={120}
-                        height={120}
-                        priority
-                    />
-                </button> */}
                 <ImageButton 
                     btnLabel="Right" 
                     imgSrc="/ThisIsRight.png" 
@@ -98,33 +85,13 @@ export default function BibleQuiz() {
                     onClickFn={() => getShowAnswer(false)}
                     visible={isGameStarted}
                 />
-                {/* <button 
-                    className='text-4xl text-green-900 p-1.5'
-                    onClick={() => getShowAnswer(false)}
-                >
-                    <Image
-                        src="/ThisIsWrong.png"
-                        alt="Wrong"
-                        width={120}
-                        height={120}
-                        priority
-                    />
-                </button> */}
             </div>
             <AnswerBox 
                 userAnswer={userAnswer}
                 modelAnswer={currentQuestions[0].answer}
                 visible = {isAnswerVisible}
             />
-            <CustomButton 
-                btnLabel="Back"
-                hrefLink = "" 
-                onClickFn ={ router.back } 
-            />
-            <CustomButton 
-                btnLabel="Home" 
-                hrefLink ="../"
-            />
+            <BasicButtonPanel /> 
         </main>
     );
 }

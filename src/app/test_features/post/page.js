@@ -1,11 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import PostC from "@/components/PostC";
-import { useRouter } from "next/navigation"
+import BasicButtonPanel from "@/components/BasicButtonPanel"
 
-export default function Post() {
-    const router = useRouter();
-    
+export default function Post() {    
     // Implement useState to make a posting function
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -68,8 +66,7 @@ export default function Post() {
                 (<PostC {...post} key={ idx = Math.random() } />)
             )}
             </div>
-            <button onClick={ router.back }>Back</button>
-            <button><a href="../">Home</a></button>
+            <BasicButtonPanel />
         </main>
 
 
