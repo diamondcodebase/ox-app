@@ -81,10 +81,8 @@ export default function Home() {
 
       <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
         <Link
-          //href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
           href="/bibleQuiz"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          //target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
@@ -98,24 +96,23 @@ export default function Home() {
           </p>
         </Link>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        <Link
+          href="/comingSoon"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Astronomy OX{" "}
+            Canada History OX{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
           </h2>
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn more about astronomy!
+            Learn more about the History of Canada!
           </p>
-        </a>
+        </Link>
 
-        <a
+        <Link
           href="/about"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           rel="noopener noreferrer"
@@ -129,10 +126,10 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
             The story about this website.
           </p>
-        </a>
+        </Link>
 
-        <a
-          href="/post"
+        <Link
+          href="/comingSoon"
           className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
           rel="noopener noreferrer"
         >
@@ -145,7 +142,7 @@ export default function Home() {
           <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
             Go to post to leave your comment
           </p>
-        </a>
+        </Link>
       </div>
       <div>
         <Text />
@@ -153,18 +150,6 @@ export default function Home() {
         <TextS content="My name is Diamond" strong={true} />
         <TextS content="This is my first React.js app" strong = {false} />
       </div>
-      {/* <div>
-        <Post 
-          title="Post Test" 
-          author="Diamond"
-          content="It should be a good start" />
-        <PostC
-          title="PostC Test"
-          author="David"
-          content="Let us learning coding together!"
-          following={true}
-        />
-      </div> */}
       <div>
         { posts.map((content, idx) => {
           return <PostC {...content} key={idx} />
