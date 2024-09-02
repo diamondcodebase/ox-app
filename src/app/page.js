@@ -153,7 +153,7 @@ export default function Home() {
         <TextS content="My name is Diamond" strong={true} />
         <TextS content="This is my first React.js app" strong = {false} />
       </div>
-      <div>
+      {/* <div>
         <Post 
           title="Post Test" 
           author="Diamond"
@@ -164,7 +164,7 @@ export default function Home() {
           content="Let us learning coding together!"
           following={true}
         />
-      </div>
+      </div> */}
       <div>
         { posts.map((content, idx) => {
           return <PostC {...content} key={idx} />
