@@ -2,27 +2,31 @@
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import QuestionBox from "@/components/QuestionBox";
+import AnswerBox from "@/components/AnswerBox";
 import PostC from "@/components/PostC";
 import Image from "next/image";
 
 export default function BibleQuiz() {
     const router = useRouter();
-    const [chosenAnswer, setChosenAnswer] = useState("");
+    const [userAnswer, setUserAnswer] = useState();
+    const [showAnswer, setShowAnswer] = useState("");
+    const [isAnswerVisible, setAnswerVisible] = useState(false);
 
     const currentQuestion = {
         questionId : 1,
         question : "馬太福音中耶穌基督的家譜是由亞當開始",
-        visible : true,
-        answered : false
+        answer : false,
+        explanation: "馬太福音中耶穌基督的家譜是由亞伯拉罕開始",
+        visible : true
     }
     const chosenPhrase = "你認為這句敍述是："
-    const answered = true;
+    const answered = true;   
 
-    
-
-    function selectAnswer(res){
+    function getShowAnswer(res){
         const answer = res ? ("正確") : ("錯誤");
-        setChosenAnswer(answer);
+        setShowAnswer(answer);
+        setUserAnswer(res);
+        setAnswerVisible(true);
     }
 
     return (
@@ -30,34 +34,44 @@ export default function BibleQuiz() {
             <div className='text-3xl font-bold'>Bible OX Challenge</div>
             <div id='loadNo' className='hide'></div>
             <button type='submit' id='startButton'>Start Game</button>
-            <QuestionBox question={currentQuestion.question} visible={currentQuestion.visible} chosenPhrase={chosenPhrase} answered={answered} chosenAnswer={chosenAnswer}
+            <QuestionBox 
+                question={currentQuestion.question} 
+                visible={currentQuestion.visible} 
+                chosenPhrase={chosenPhrase} 
+                answered={answered} 
+                showAnswer={showAnswer}
             />
-            <div className='flex justify-center mb-4'>
+            <div className='flex justify-center mb-4 flex-row items-center'>
                 <button 
-                    className='border-gray-300 text-4xl text-green-900 border-2 rounded-md p-1.5'
-                    onClick={() => selectAnswer(true)}
+                    className='text-4xl text-green-900 p-1.5'
+                    onClick={() => getShowAnswer(true)}
                 >
                     <Image
                         src="/ThisIsRight.png"
                         alt="Right"
-                        width={100}
-                        height={100}
+                        width={120}
+                        height={120}
                         priority
                     />
                 </button>
                 <button 
-                    className='border-gray-300 text-4xl text-green-900 border-2 rounded-md p-1.5'
-                    onClick={() => selectAnswer(false)}
+                    className='text-4xl text-green-900 p-1.5'
+                    onClick={() => getShowAnswer(false)}
                 >
                     <Image
                         src="/ThisIsWrong.png"
                         alt="Wrong"
-                        width={100}
-                        height={100}
+                        width={120}
+                        height={120}
                         priority
                     />
                 </button>
             </div>
+            <AnswerBox 
+                userAnswer={userAnswer}
+                modelAnswer={currentQuestion.answer}
+                visible = {isAnswerVisible}
+            />
             <button onClick={ router.back }>Back</button>
             <button><a href="../">Home</a></button>
         </main>

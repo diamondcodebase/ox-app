@@ -1,9 +1,9 @@
-export default function QuestionBox({question, visible, chosenPhrase, answered, chosenAnswer }) {
+export default function QuestionBox({question, visible, chosenPhrase, answered, showAnswer }) {
 
     const chosenPart = answered ? (
         <div className='row-auto text-4xl text-green-900 justify-center'>
             {chosenPhrase}
-            <span>{chosenAnswer}</span>
+            <span>{showAnswer}</span>
         </div>
     ) : (<></>);
     
