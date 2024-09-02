@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import QuestionBox from "@/components/QuestionBox";
 import AnswerBox from "@/components/AnswerBox";
-import PostC from "@/components/PostC";
+import CustomButton from "@/components/CustomButton";
 import Image from "next/image";
 
 export default function BibleQuiz() {
@@ -72,8 +72,15 @@ export default function BibleQuiz() {
                 modelAnswer={currentQuestion.answer}
                 visible = {isAnswerVisible}
             />
-            <button onClick={ router.back }>Back</button>
-            <button><a href="../">Home</a></button>
+            <CustomButton 
+                btnLabel="Back"
+                hrefLink = "" 
+                onClickFn ={ router.back } 
+            />
+            <CustomButton 
+                btnLabel="Home" 
+                hrefLink ="../"
+            />
         </main>
     );
 }
