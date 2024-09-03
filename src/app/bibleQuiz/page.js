@@ -118,9 +118,13 @@ export default function BibleQuiz() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className='text-3xl font-bold'>Bible OX Challenge</div>
-            <div id='loadNo' className='hide'></div>
+        <main className="flex min-h-screen flex-col items-center justify-between p-10">
+            <div className='text-5xl font-bold p-3 m-3'>Bible OX Challenge</div>
+            <StatusBar 
+                round = {round}
+                score = {score}
+                visible = {isGameStarted && !isGameOver}
+            />
             <CustomButtonV 
                 btnLabel="Start Game"
                 visible = {!isGameStarted}
