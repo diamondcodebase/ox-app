@@ -23,6 +23,7 @@ export default function BibleQuiz() {
     const [isConfirmed, setConfirmed] = useState(false);
 
     const [questionContent, setQuestionContent] = useState("");
+    const [explanation, setExplanation] = useState("");
     const [userAnswer, setUserAnswer] = useState(false);
     const [modelAnswer, setModelAnswer] = useState(false);
     const [showAnswer, setShowAnswer] = useState("");
@@ -92,7 +93,8 @@ export default function BibleQuiz() {
     function resetRound(){
         var question = questionsSet[round];
         setModelAnswer(question.answer);
-        setQuestionContent(question.question);           
+        setQuestionContent(question.question);
+        setExplanation(question.explanation);           
         setAnswerVisible(false);
         setAnswered(false);
         setConfirmed(false);
@@ -155,11 +157,12 @@ export default function BibleQuiz() {
             <AnswerBox 
                 userAnswer={userAnswer}
                 modelAnswer={modelAnswer}
+                explanation={explanation}
                 visible = {isAnswerVisible}
             />
             <CustomButtonV 
                 btnLabel="Confirm Answer"
-                visible = {isGameStarted && !isConfirmed}
+                visible = {isGameStarted && !isConfirmed && isAnswered}
                 color = "Indigo"
                 onClickFn ={() => confirmAnswer() }
             />
