@@ -5,7 +5,8 @@ import QuestionBox from "@/components/QuestionBox";
 import AnswerBox from "@/components/AnswerBox";
 import ImageButton from "@/components/ImageButton";
 import CustomButtonV from "@/components/CustomButtonV";
-import BasicButtonPanel from "@/components/BasicButtonPanel"
+import ResultSummary from "@/components/ResultSummary";
+import BasicButtonPanel from "@/components/BasicButtonPanel";
 import Image from "next/image";
 
 export default function BibleQuiz() {
@@ -171,6 +172,11 @@ export default function BibleQuiz() {
                 visible = {isGameStarted && isConfirmed && !isGameOver}
                 color = "Indigo"
                 onClickFn ={() => nextRound() }
+            />
+            <ResultSummary 
+                score = {score}
+                round = {round}
+                visible = {isGameOver}
             />
             <BasicButtonPanel /> 
         </main>
