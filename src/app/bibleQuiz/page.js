@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import CountDownTimer from "@/components/CountDownTimer";
 import StatusBar from "@/components/StatusBar";
 import QuestionBox from "@/components/QuestionBox";
 import AnswerBox from "@/components/AnswerBox";
@@ -14,6 +15,8 @@ export default function BibleQuiz() {
     const [isGameStarted, setGameStarted] = useState(false);
     const [isGameOver, setGameOver] = useState(false);
 
+    const [isTimerVisible, setTimerVisible] = useState(false);
+    const [isTimerRunning, setTimerRunning] = useState(false);
     const [isQuestionVisible, setQuestionVisible] = useState(false);
     const [isAnswerVisible, setAnswerVisible] = useState(false);
     
@@ -78,15 +81,16 @@ export default function BibleQuiz() {
     }
 
     function confirmAnswer(){
+        setTimerVisible(false);
+        setTimerRunning(false);
         updateScore()
         setConfirmed(true);
         setAnswerVisible(true);
-        setAnswered(true);
     }
 
     function updateScore(){
-        console.log(userAnswer, modelAnswer, questionContent);
-        if(userAnswer == modelAnswer){
+        //console.log(userAnswer, modelAnswer, questionContent);
+        if(userAnswer == modelAnswer && isAnswered){
             setScore(score + 1);
          }
     }
@@ -100,7 +104,9 @@ export default function BibleQuiz() {
         setAnswered(false);
         setConfirmed(false);
         setUserAnswer(null);
-        setShowAnswer("");     
+        setShowAnswer("");
+        setTimerRunning(true);
+        setTimerVisible(true);     
     }
 
     function nextRound(){
@@ -123,6 +129,12 @@ export default function BibleQuiz() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-10">
             <div className='text-5xl font-bold p-3 m-3'>Bible OX Challenge</div>
+            <CountDownTimer 
+                secLimit = {15} 
+                visible = {isTimerVisible} 
+                running = {isTimerRunning} 
+                timeoutFn = {() => confirmAnswer() }
+            />
             <StatusBar 
                 round = {round}
                 score = {score}
