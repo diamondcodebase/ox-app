@@ -1,8 +1,8 @@
-export default function AnswernBox({userAnswer, modelAnswer, explanation, visible }) {
+export default function AnswernBox({isAnswered, userAnswer, modelAnswer, explanation, visible }) {
     const isCorrect = userAnswer === modelAnswer;
     const responsePart = 
         (<div className='row-auto text-4xl text-green-900 justify-center'>
-            <span>{isCorrect ? ("答啱啦！") : ("答錯囉...繼續努力！")}</span>
+            <span> {isAnswered ? (isCorrect ? ("答啱啦！") : ("答錯囉...繼續努力！")) : ("時候到了！")}</span>
         </div>
         );
 

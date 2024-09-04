@@ -167,7 +167,8 @@ export default function BibleQuiz() {
                     visible={isGameStarted && !isConfirmed}
                 />
             </div>
-            <AnswerBox 
+            <AnswerBox
+                isAnswered = {isAnswered} 
                 userAnswer={userAnswer}
                 modelAnswer={modelAnswer}
                 explanation={explanation}
