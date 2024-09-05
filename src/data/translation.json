@@ -1,0 +1,23 @@
+{   
+    "en": {
+        "about": "About",
+        "lang": "Language",
+        "english": "English",
+        "chinese": "Chinese",
+        "japanese": "Japanese"
+    },
+    "zh": {
+        "about": "關於這網頁",
+        "lang": "語言",
+        "english": "英語",
+        "chinese": "中文",
+        "japanese": "日語"
+    },
+    "ja": {
+        "about": "について",
+        "lang": "言語",
+        "english": "英語",
+        "chinese": "中国語",
+        "japanese": "日本語"
+    }
+}  
