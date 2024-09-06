@@ -1,17 +1,16 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link"; // import the Link Tag
-import translation from "@/data/translation";
+import LanguageSelector from "@/components/LanguageSelector";
 import { Post } from "@/components/Post";
 import PostC from "@/components/PostC";
 import PostD from "@/components/PostDefault";
 import TextS, {TextIn} from "@/components/TextS";
 import React, { useState } from 'react';
 
-
-import LanguageSelector from "@/components/LanguageSelector";
-
-
+// For passing current lang state
+import Link from "next/link"; // import the Link Tag
+import translation from "@/data/translation";
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
   // Dynamic content rendering
@@ -38,22 +37,14 @@ export default function Home() {
   
   const [currentLanguage, setCurrentLanguage] = useState('en');
 
-  // Function to change the current language
-  function handleLanguageChange(lang)
-  {
-    setCurrentLanguage(lang);
-  };
-  function changeToEng(){ setCurrentLanguage('en') };
-  function changeToChi(){ setCurrentLanguage('zh') };
-  function changeToJap(){ setCurrentLanguage('ja') };
-
   return (
     <body>
       <header>
         <LanguageSelector 
-          FnChangeEng={ () => changeToEng() }
-          FnChangeChi={ () => changeToChi() }
-          FnChangeJap={ () => changeToJap() } 
+          FnChangeEng={ () => setCurrentLanguage('en') }
+          FnChangeChi={ () => setCurrentLanguage('zh') }
+          FnChangeJap={ () => setCurrentLanguage('ja') } 
+          currentLang={currentLanguage}
         />
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -91,35 +82,41 @@ export default function Home() {
 
         <div className="mb-32 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
           <Link
-            href="/about"
+            href={{
+              pathname: "/about",
+              query: { currentLanguage: currentLanguage }
+            }}   
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              {translation[currentLanguage].about} {" "}
+              {translation[currentLanguage]["mainpage"].about } {" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              The story about this website.
+            { translation[currentLanguage].mainpage.aboutS }
             </p>
           </Link>
           
           <Link
-            href="/bibleQuiz"
+            href={{
+              pathname: "/bibleQuiz",
+              query: { currentLanguage: currentLanguage }
+            }}           
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
             rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Bible OX{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Take a challenge to know more about the Bible!
-            </p>
+          >            
+              <h2 className={`mb-3 text-2xl font-semibold`}>
+                Bible OX{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                Take a challenge to know more about the Bible!
+              </p>
           </Link>
 
           <Link

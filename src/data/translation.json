@@ -1,5 +1,9 @@
 {   
     "en": {
+        "mainpage": {
+            "about": "About",
+            "aboutS": "The story about this website"
+        },
         "about": "About",
         "lang": "Language",
         "english": "English",
@@ -7,6 +11,10 @@
         "japanese": "Japanese"
     },
     "zh": {
+        "mainpage": {
+            "about": "關於這網站",
+            "aboutS": "有關這個網站的由來"
+        },
         "about": "關於這網頁",
         "lang": "語言",
         "english": "英語",
@@ -14,6 +22,10 @@
         "japanese": "日語"
     },
     "ja": {
+        "mainpage": {
+            "about": "について",
+            "aboutS": "このウェブサイトの成り立ちについて"
+        },
         "about": "について",
         "lang": "言語",
         "english": "英語",

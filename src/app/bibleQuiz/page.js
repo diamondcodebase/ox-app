@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import React from "react";
 import CountDownTimer from "@/components/CountDownTimer";
 import StatusBar from "@/components/StatusBar";
 import QuestionBox from "@/components/QuestionBox";
@@ -10,7 +11,16 @@ import ResultSummary from "@/components/ResultSummary";
 import BasicButtonPanel from "@/components/BasicButtonPanel";
 import Image from "next/image";
 
+// For passing current lang state
+import Link from "next/link"; // import the Link Tag
+import translation from "@/data/translation";
+import { useSearchParams } from "next/navigation";
+
+
 export default function BibleQuiz() {
+    const searchParams = useSearchParams();
+    const currentLanguage = searchParams.get('currentLanguage');
+
     const noOfRound = 5;
     const [isGameStarted, setGameStarted] = useState(false);
     const [isGameOver, setGameOver] = useState(false);
@@ -31,7 +41,7 @@ export default function BibleQuiz() {
     const [userAnswer, setUserAnswer] = useState(false);
     const [modelAnswer, setModelAnswer] = useState(false);
     const [showAnswer, setShowAnswer] = useState("");
-
+    
     const questionsSet = [
         {
             questionId : 1,
@@ -127,71 +137,74 @@ export default function BibleQuiz() {
     }
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-10">
-            <div className='text-5xl font-bold p-3 m-3'>Bible OX Challenge</div>
-            <CountDownTimer 
-                secLimit = {15} 
-                visible = {isTimerVisible} 
-                running = {isTimerRunning} 
-                timeoutFn = {() => confirmAnswer() }
-            />
-            <StatusBar 
-                round = {round}
-                score = {score}
-                visible = {isGameStarted && !isGameOver}
-            />
-            <CustomButtonV 
-                btnLabel="Start Game"
-                visible = {!isGameStarted}
-                color = "Indigo"
-                onClickFn ={() => startGame() }
-            />
-            <QuestionBox 
-                question={questionContent} 
-                visible={isQuestionVisible} 
-                chosenPhrase={chosenPhrase} 
-                answered={answered} 
-                showAnswer={showAnswer}
-            />
-            <div className='flex justify-center mb-4 flex-row items-center'>
-                <ImageButton 
-                    btnLabel="Right" 
-                    imgSrc="/ThisIsRight.png" 
-                    onClickFn={() => getShowAnswer(true)} 
-                    visible={isGameStarted && !isConfirmed}
+        <body>
+            <header>{currentLanguage}</header>
+            <main className="flex min-h-screen flex-col items-center justify-between p-10">
+                <div className='text-5xl font-bold p-3 m-3'>Bible OX Challenge</div>
+                <CountDownTimer 
+                    secLimit = {15} 
+                    visible = {isTimerVisible} 
+                    running = {isTimerRunning} 
+                    timeoutFn = {() => confirmAnswer() }
                 />
-                <ImageButton
-                    btnLabel="Wrong"
-                    imgSrc="/ThisIsWrong.png"
-                    onClickFn={() => getShowAnswer(false)}
-                    visible={isGameStarted && !isConfirmed}
+                <StatusBar 
+                    round = {round}
+                    score = {score}
+                    visible = {isGameStarted && !isGameOver}
                 />
-            </div>
-            <AnswerBox
-                isAnswered = {isAnswered} 
-                userAnswer={userAnswer}
-                modelAnswer={modelAnswer}
-                explanation={explanation}
-                visible = {isAnswerVisible}
-            />
-            <CustomButtonV 
-                btnLabel="Confirm Answer"
-                visible = {isGameStarted && !isConfirmed && isAnswered}
-                color = "Indigo"
-                onClickFn ={() => confirmAnswer() }
-            />
-            <CustomButtonV 
-                btnLabel="Next Question"
-                visible = {isGameStarted && isConfirmed && !isGameOver}
-                color = "Indigo"
-                onClickFn ={() => nextRound() }
-            />
-            <ResultSummary 
-                score = {score}
-                round = {round}
-                visible = {isGameOver}
-            />
-            <BasicButtonPanel /> 
-        </main>
+                <CustomButtonV 
+                    btnLabel="Start Game"
+                    visible = {!isGameStarted}
+                    color = "Indigo"
+                    onClickFn ={() => startGame() }
+                />
+                <QuestionBox 
+                    question={questionContent} 
+                    visible={isQuestionVisible} 
+                    chosenPhrase={chosenPhrase} 
+                    answered={answered} 
+                    showAnswer={showAnswer}
+                />
+                <div className='flex justify-center mb-4 flex-row items-center'>
+                    <ImageButton 
+                        btnLabel="Right" 
+                        imgSrc="/ThisIsRight.png" 
+                        onClickFn={() => getShowAnswer(true)} 
+                        visible={isGameStarted && !isConfirmed}
+                    />
+                    <ImageButton
+                        btnLabel="Wrong"
+                        imgSrc="/ThisIsWrong.png"
+                        onClickFn={() => getShowAnswer(false)}
+                        visible={isGameStarted && !isConfirmed}
+                    />
+                </div>
+                <AnswerBox
+                    isAnswered = {isAnswered} 
+                    userAnswer={userAnswer}
+                    modelAnswer={modelAnswer}
+                    explanation={explanation}
+                    visible = {isAnswerVisible}
+                />
+                <CustomButtonV 
+                    btnLabel="Confirm Answer"
+                    visible = {isGameStarted && !isConfirmed && isAnswered}
+                    color = "Indigo"
+                    onClickFn ={() => confirmAnswer() }
+                />
+                <CustomButtonV 
+                    btnLabel="Next Question"
+                    visible = {isGameStarted && isConfirmed && !isGameOver}
+                    color = "Indigo"
+                    onClickFn ={() => nextRound() }
+                />
+                <ResultSummary 
+                    score = {score}
+                    round = {round}
+                    visible = {isGameOver}
+                />
+                <BasicButtonPanel /> 
+            </main>
+        </body>
     );
 }
