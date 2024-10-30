@@ -5,7 +5,7 @@ import { Post } from "@/components/Post";
 import PostC from "@/components/PostC";
 import PostD from "@/components/PostDefault";
 import TextS, {TextIn} from "@/components/TextS";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // For passing current lang state
 import Link from "next/link"; // import the Link Tag
@@ -13,6 +13,16 @@ import translation from "@/data/translation";
 import { useSearchParams } from "next/navigation";
 
 export default function Home() {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const latestLanguage = searchParams.get('currentLanguage');
+    console.log(latestLanguage);
+    if(latestLanguage !== null){      
+      setCurrentLanguage(latestLanguage.currentLanguage);
+    }
+  }, [searchParams]);
+
   // Dynamic content rendering
   const posts = [
     {
@@ -90,7 +100,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              {translation[currentLanguage]["mainpage"].about } {" "}
+              {translation[currentLanguage].mainpage.about } {" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
@@ -109,7 +119,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >            
               <h2 className={`mb-3 text-2xl font-semibold`}>
-                Bible OX{" "}
+                {translation[currentLanguage].bibleOX}{" "}
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                   -&gt;
                 </span>

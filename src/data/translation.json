@@ -4,8 +4,13 @@
             "about": "About",
             "aboutS": "The story about this website"
         },
+        "bibleOX":"BibleOX",
+        "bibleOXS": "Take a challenge to know more about the Bible!",
         "about": "About",
         "lang": "Language",
+        "buttonpanel":{
+            "home": "Home"
+        },
         "english": "English",
         "chinese": "Chinese",
         "japanese": "Japanese"
@@ -15,8 +20,13 @@
             "about": "關於這網站",
             "aboutS": "有關這個網站的由來"
         },
+        "bibleOX":"聖經OX",
+        "bibleOXS": "接受挑戰，更多了解聖經！",
         "about": "關於這網頁",
         "lang": "語言",
+        "buttonpanel":{
+            "home": "回到主頁"
+        },
         "english": "英語",
         "chinese": "中文",
         "japanese": "日語"
@@ -26,8 +36,13 @@
             "about": "について",
             "aboutS": "このウェブサイトの成り立ちについて"
         },
+        "bibleOX":"聖書OX",
+        "bibleOXS": "チャレンジして聖書についてもっと学びましょう!",
         "about": "について",
         "lang": "言語",
+        "buttonpanel":{
+            "home": "ホームページに戻る"
+        },
         "english": "英語",
         "chinese": "中国語",
         "japanese": "日本語"

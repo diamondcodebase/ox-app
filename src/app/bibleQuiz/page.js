@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link"; // import the Link Tag
 import translation from "@/data/translation";
 import { useSearchParams } from "next/navigation";
+import AdvancedButtonPanel from "@/components/AdvancedButtonPanel";
 
 
 export default function BibleQuiz() {
@@ -203,7 +204,7 @@ export default function BibleQuiz() {
                     round = {round}
                     visible = {isGameOver}
                 />
-                <BasicButtonPanel /> 
+                <AdvancedButtonPanel currentLanguage={currentLanguage}/> 
             </main>
         </body>
     );
