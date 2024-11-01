@@ -27,8 +27,8 @@ export default function CountDownTimer({ secLimit, visible, running, timeoutFn }
     
     return (
         <div className="countdown-timer">
-            <h1>尚餘時間</h1>
-            <div className="timer-display">
+            <div className="text-3xl">Time Remain</div>
+            <div className="timer-display text-center text-4xl bg-white border-gray-500 border-4 rounded-md p-4 m-4">
                 <span>{Math.floor(timeLeft / 60)}:</span>
                 <span>{(timeLeft % 60).toString().padStart(2, '0')}</span>
             </div>
