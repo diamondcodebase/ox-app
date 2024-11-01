@@ -1,0 +1,12 @@
+{   
+    "mainpage": {
+        "about": "About",
+        "aboutS": "The story about this website",
+        "bibleOX":"BibleOX",
+        "bibleOXS": "Take a challenge to know more about the Bible!"
+    },
+    "about": "About",
+    "buttonpanel":{
+        "home": "Home"
+    }    
+}  

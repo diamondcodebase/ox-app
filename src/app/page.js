@@ -9,7 +9,8 @@ import React, { useState, useEffect } from 'react';
 
 // For passing current lang state
 import Link from "next/link"; // import the Link Tag
-import translation from "@/data/translation";
+// import translation from "@/data/translation";
+import contentText from "@/data/contentText";
 import { useSearchParams } from "next/navigation";
 
 export default function Home() {
@@ -50,12 +51,12 @@ export default function Home() {
   return (
     <body>
       <header>
-        <LanguageSelector 
+        {/* <LanguageSelector 
           FnChangeEng={ () => setCurrentLanguage('en') }
           FnChangeChi={ () => setCurrentLanguage('zh') }
           FnChangeJap={ () => setCurrentLanguage('ja') } 
           currentLang={currentLanguage}
-        />
+        /> */}
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         {/* <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -100,13 +101,13 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-2xl font-semibold`}>
-              {translation[currentLanguage].mainpage.about } {" "}
+              { contentText.mainpage.about } {" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            { translation[currentLanguage].mainpage.aboutS }
+            { contentText.mainpage.aboutS }
             </p>
           </Link>
           
@@ -119,13 +120,13 @@ export default function Home() {
             rel="noopener noreferrer"
           >            
               <h2 className={`mb-3 text-2xl font-semibold`}>
-                {translation[currentLanguage].bibleOX}{" "}
+                { contentText.mainpage.bibleOX }
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                   -&gt;
                 </span>
               </h2>
               <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Take a challenge to know more about the Bible!
+                { contentText.mainpage.bibleOXS }
               </p>
           </Link>
 
