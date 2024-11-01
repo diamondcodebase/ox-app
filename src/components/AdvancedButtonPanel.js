@@ -4,13 +4,14 @@ import React, { useState, useEffect } from 'react';
 
 import { useSearchParams } from "next/navigation";
 import CustomButtonA from "@/components/CustomButtonA";
-import translation from "@/data/translation";
+//import translation from "@/data/translation";
+import contentText from "@/data/contentText";
 
 export default function AdvancedButtonPanel(currentLanguage){
     const currentLang = currentLanguage.currentLanguage;
-    console.log(translation[currentLang]);
-    const lang = translation[currentLang].lang;
-    const displayTextHome = translation[currentLang].buttonpanel.home;
+    //console.log(translation[currentLang]);
+    //const lang = translation[currentLang].lang;
+    const displayTextHome = contentText.buttonpanel.home;
 
     return (
         <div className='flex justify-center mb-4 flex-row items-center'>
@@ -21,7 +22,7 @@ export default function AdvancedButtonPanel(currentLanguage){
             /> */}
             <CustomButtonA 
                 pathname="../" 
-                query = {{ currentLanguage: currentLanguage }}
+                // query = {{ currentLanguage: currentLanguage }}
                 displayText={displayTextHome}
             />
         </div>
