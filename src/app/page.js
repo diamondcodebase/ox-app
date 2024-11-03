@@ -63,16 +63,6 @@ export default function Home() {
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover"
       }}>
-        <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-white before:dark:opacity-10 after:dark:from-white after:dark:via-[#FFFFFF] after:dark:opacity-300 before:lg:h-[360px] z-[-1]">
-          <Image
-            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70]"
-            src="/plant_bg.jpg"
-            alt="Growth Logo"
-            width={280}
-            height={100}
-            priority
-          />
-        </div>
 
         <div className="mb-32 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
           <Link
@@ -80,16 +70,16 @@ export default function Home() {
               pathname: "/about",
               query: { currentLanguage: currentLanguage }
             }}   
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-200/50 hover:dark:border-green-500 hover:dark:bg-green-200/50"
             rel="noopener noreferrer"
           >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              { contentText.mainpage.about } {" "}
+            <h2 className={`mb-3 text-3xl font-bold text-green-800`}>
+              { contentText.mainpage.about }
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-green-900`}>
             { contentText.mainpage.aboutS }
             </p>
           </Link>
@@ -98,60 +88,60 @@ export default function Home() {
             href={{
               pathname: "/canadaQuiz"
             }}  
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-red-300 hover:bg-red-200/40 hover:dark:border-red-300 hover:dark:bg-red-200/40"
             rel="noopener noreferrer"
           >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
+            <h2 className={`mb-3 text-3xl font-bold text-red-800`}>
               Canada OX{" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-red-900`}>
               Learn more about Canada!
             </p>
-          </Link>  
+          </Link>           
+
+          <Link
+            href="/comingSoon"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
+            rel="noopener noreferrer"
+          >
+            <h2 className={`mb-3 text-3xl font-bold text-purple-800`}>
+              Hong Kong OX{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance text-purple-900`}>
+              Learn more about Hong Kong!
+            </p>
+          </Link>
 
           <Link
             href={{
               pathname: "/bibleQuiz"
             }}           
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
             rel="noopener noreferrer"
           >            
-              <h2 className={`mb-3 text-2xl font-semibold`}>
+              <h2 className={`mb-3 text-3xl font-bold text-yellow-800`}>
                 { contentText.mainpage.bibleOX }
                 <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
                   -&gt;
                 </span>
               </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-yellow-900`}>
                 { contentText.mainpage.bibleOXS }
               </p>
           </Link>
         
-
-          <Link
-            href="/comingSoon"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-            rel="noopener noreferrer"
-          >
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Post{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-              Go to post to leave your comment
-            </p>
-          </Link>
         </div>
-        <div>
+        {/* <div>
           <TextIn content="Hello World" />
           <TextS content="My name is Diamond" strong={true} />
           <TextS content="This is my first React.js app" strong = {false} />
-        </div>
+        </div> */}
         <div className="mb-32 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
           { posts.map((content, idx) => {
             return <PostC {...content} key={idx} />
