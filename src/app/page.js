@@ -103,7 +103,7 @@ export default function Home() {
           </Link>           
 
           <Link
-            href="/comingSoon"
+            href="/hongkongQuiz"
             className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
             rel="noopener noreferrer"
           >
