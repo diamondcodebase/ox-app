@@ -75,7 +75,7 @@ export default function BibleQuiz() {
             explanation: "Hong Kong is one of the most densely populated places in the world, with a population density of over 6,700 people per square kilometer."
         },
     ]
-    const chosenPhrase = "You think this statement is ："
+    const chosenPhrase = "You think this statement is "
     const answered = true;   
 
     function getShowAnswer(res){

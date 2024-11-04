@@ -75,7 +75,7 @@ export default function BibleQuiz() {
             explanation: "The Canadian Rockies, a major mountain range in western Canada, are located entirely within the borders of Canada, stretching from the province of British Columbia to the province of Alberta."
         },
     ]
-    const chosenPhrase = "You think this statement is ："
+    const chosenPhrase = "You think this statement is "
     const answered = true;   
 
     function getShowAnswer(res){
