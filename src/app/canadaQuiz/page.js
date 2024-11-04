@@ -52,15 +52,15 @@ export default function BibleQuiz() {
         },
         {
             questionId : 2,
-            question : "The Canadian Constitution includes the Canadian Charter of Rights and Freedoms.名字",
+            question : "Victoria Day was originally established to celebrate the birthday of Queen Victoria.",
             answer : true,
-            explanation: "The Canadian Charter of Rights and Freedoms is an integral part of the Canadian Constitution, which was patriated in 1982."
+            explanation: "Victoria Day was originally established to celebrate the birthday of Queen Victoria since 1840s."
         },
         {
             questionId : 3,
-            question : "The Canadian Pacific Railway was built entirely by Chinese immigrants.",
+            question : "Remembrance Day in Canada commemorates the end of World War II.",
             answer : false,
-            explanation: "While a significant portion of the Canadian Pacific Railway was built by Chinese immigrant workers, the railway construction also relied on other labor sources, including European immigrants and Indigenous workers."
+            explanation: "Remembrance Day, observed on November 11th, marks the date when World War I ended in 1918 with the signing of the Armistice."
         },
         {
             questionId : 4,
