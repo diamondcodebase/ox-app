@@ -46,40 +46,40 @@ export default function BibleQuiz() {
     const questionsSet = [
         {
             questionId : 1,
-            question : "馬太福音中耶穌基督的家譜是由亞當開始",
+            question : "The genealogy of Jesus Christ in the Gospel of Matthew begins with Adam.",
             answer : false,
-            explanation: "馬太福音中耶穌基督的家譜是由亞伯拉罕開始 (馬太福音 1:1)"
+            explanation: "The genealogy of Jesus Christ in Matthew begins with Abraham (Matthew 1:1)"
         },
         {
             questionId : 2,
-            question : "馬太福音中耶穌家譜共出現五位女性的名字",
+            question : "Five women's names appear in the genealogy of Jesus in the Gospel of Matthew",
             answer : true,
-            explanation: "(馬太福音 1:3,5,6,16)"
+            explanation: "(Matthew 1:3,5,6,16)"
         },
         {
             questionId : 3,
-            question : "馬太福音1:23「必有童女懷孕生子，人要稱他的名為以馬內利」出自舊約詩篇",
+            question : "Matthew 1:23 'The virgin will conceive and give birth to a son, and they will call him Immanuel” comes from the Old Testament Psalms",
             answer : false,
-            explanation: "出自舊約以賽亞書7章 (以賽亞書 7:14)"
+            explanation: "It comes from Isaiah 7 in the Old Testament (Isaiah 7:14)"
         },
         {
             questionId : 4,
-            question : "馬太福音3:3 「在曠野有人聲喊著說：『預備主的道，修直他的路！』」出自以賽亞書四十章",
+            question : "Matthew 3:3 'A voice of one calling in the wilderness, 'Prepare the way for the Lord, make straight paths for him.'' comes from Isaiah chapter 40",
             answer : true,
-            explanation: "(馬太福音 3:3、以賽亞書 40:3)"
+            explanation: "(Matthew 3:3, Isaiah 40:3)"
         },
         {
             questionId : 5,
-            question : "耶穌出生於猶大的伯利恆",
+            question : "Jesus was born in Bethlehem, Judah",
             answer : true,
-            explanation: "(馬太福音 2:1)"
+            explanation: "(Matthew 2:1)"
         },
     ]
-    const chosenPhrase = "你認為這句敍述是："
+    const chosenPhrase = "You think this statement is "
     const answered = true;   
 
     function getShowAnswer(res){
-        const answer = res ? ("正確") : ("錯誤");
+        const answer = res ? ("Right") : ("Wrong");
         setShowAnswer(answer);
         setUserAnswer(res);
         setAnswered(true);
