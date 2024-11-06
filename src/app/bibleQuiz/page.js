@@ -120,6 +120,10 @@ export default function BibleQuiz() {
         setTimerVisible(true);     
     }
 
+    function randomQuestion(questionsSet){
+        
+    }
+
     function nextRound(){
         
         if(round >=noOfRound){
