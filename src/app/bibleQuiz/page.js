@@ -120,8 +120,13 @@ export default function BibleQuiz() {
         setTimerVisible(true);     
     }
 
-    function randomQuestion(questionsSet){
-        
+    function randomQuestion(questionsSet, resultSize){
+        const n = questionsSet.length;
+        const randomArray = [];
+        for (let i = 0; i < resultSize; i++) {
+            randomArray.push(Math.floor(Math.random() * n));
+        }
+        return randomArray;
     }
 
     function nextRound(){
