@@ -14,25 +14,25 @@ function RandomIntegerArray() {
         },
         {
             questionId : 2,
-            question : "Five women's names appear in the genealogy of Jesus in the Gospel of Matthew",
+            question : "Five women's names appear in the genealogy of Jesus in the Gospel of Matthew.",
             answer : true,
             explanation: "(Matthew 1:3,5,6,16)"
         },
         {
             questionId : 3,
-            question : "Matthew 1:23 'The virgin will conceive and give birth to a son, and they will call him Immanuel” comes from the Old Testament Psalms",
+            question : "Matthew 1:23 'The virgin will conceive and give birth to a son, and they will call him Immanuel” comes from the Old Testament Psalms.",
             answer : false,
             explanation: "It comes from Isaiah 7 in the Old Testament (Isaiah 7:14)"
         },
         {
             questionId : 4,
-            question : "Matthew 3:3 'A voice of one calling in the wilderness, 'Prepare the way for the Lord, make straight paths for him.'' comes from Isaiah chapter 40",
+            question : "Matthew 3:3 'A voice of one calling in the wilderness, 'Prepare the way for the Lord, make straight paths for him.'' comes from Isaiah chapter 40.",
             answer : true,
             explanation: "(Matthew 3:3, Isaiah 40:3)"
         },
         {
             questionId : 5,
-            question : "Jesus was born in Bethlehem, Judah",
+            question : "Jesus was born in Bethlehem, Judah.",
             answer : true,
             explanation: "(Matthew 2:1)"
         },
@@ -44,7 +44,7 @@ function RandomIntegerArray() {
         },
         {
             questionId : 7,
-            question : "After Joseph's family returned to the land of Israel, they settled in Nazareth",
+            question : "After Joseph's family returned to the land of Israel, they settled in Nazareth.",
             answer : true,
             explanation: "(Matthew 2:23)"
         },
@@ -65,6 +65,36 @@ function RandomIntegerArray() {
             question: "John the Baptist warned the Israelites not to think that they would be saved because they had Abraham as their ancestor.",
             answer: true,
             explanation: "(Matthew 3:9-10)"
+        },
+        {
+            questionId: 21,
+            question: "When Jesus heard that John was in prison, he left Nazareth and went to the region of Zebulun and Naphtali.",
+            answer: true,
+            explanation: "(Matthew 4:13)"
+        },
+        {
+            questionId: 24,
+            question: "When Jesus first sent out his disciples, they only gathered in the area of ​​Israel for preaching.",
+            answer: true,
+            explanation: "(Matthew 10:5-6)"
+        },
+        {
+            questionId: 27,
+            question: "In the Sermon on the Mount in Matthew 5, Jesus said that whoever breaks one of the commandments will be called the greatest in the kingdom of heaven.",
+            answer: false,
+            explanation: "Jesus said whoever breaks one of the commandments will be called the least in the kingdom of heaven (Matthew 5:19)"
+        },
+        {
+            questionId: 30,
+            question: "John and James were casting their nets for fishing when Jesus called them.",
+            answer: false,
+            explanation: "They are mending the net on the boat (Matthew 4:21-22)"
+        },
+        {
+            questionId: 46,
+            question: "In Matthew 12, Jesus used soil as a metaphor to tell the difference between good and evil people.",
+            answer: false,
+            explanation: "Jesus used the parable of the fruit of a tree to distinguish between good and evil people (Matthew 12:33-36)"
         },
     ]
 
