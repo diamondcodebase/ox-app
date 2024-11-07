@@ -1,10 +1,9 @@
 "use client";
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function RandomIntegerArray() {
-    const [integerArray, setIntegerArray] = useState([]);
-
+    // Sample Question Data
     const noOfRound = 5;
     const questionsSet = [
         {
@@ -37,46 +36,68 @@ function RandomIntegerArray() {
             answer : true,
             explanation: "(Matthew 2:1)"
         },
+        {
+            questionId : 6,
+            question : "Joseph's family fled to Persia in the east to avoid King Herod's pursuit.",
+            answer : false,
+            explanation: "They were fleeing to the southwest to Egypt (Matthew 2:13)"
+        },
+        {
+            questionId : 7,
+            question : "After Joseph's family returned to the land of Israel, they settled in Nazareth",
+            answer : true,
+            explanation: "(Matthew 2:23)"
+        },
+        {
+            questionId: 8,
+            question: "Jesus was baptized by John the Baptist on the Sea of ​​Galilee.",
+            answer: false,
+            explanation: "Jesus was baptized by John the Baptist in the Jordan River (Matthew 3:13)"
+        },
+        {
+            questionId: 9,
+            question: "John the Baptist used the metaphor of a rock to exhort the Israelites to repent.",
+            answer: false,
+            explanation: "John the Baptist used the metaphor of fruitfulness (Matthew 3:7-10)"
+        },
+        {
+            questionId: 10,
+            question: "John the Baptist warned the Israelites not to think that they would be saved because they had Abraham as their ancestor.",
+            answer: true,
+            explanation: "(Matthew 3:9-10)"
+        },
     ]
-    const generateRandomArray = () => {
-        // Generate an array of 10 random integers between 0 and 100
-        const newArray = Array.from({ length: noOfRound }, () => Math.floor(Math.random() * questionsSet.length));
-        setIntegerArray(newArray);
-    };
+
+    // generate and return an array of random pick questions
+    function generateRandomQuestionArr() {
+        const n = questionsSet.length;
+        const resultSet = new Set();
+        
+        while (resultSet.size < noOfRound){
+            const index = Math.floor(Math.random() * n);
+            resultSet.add(questionsSet[index]);
+        }
+        const resultArr = Array.from(resultSet);
+        console.log(resultArr);
+        return resultArr;
+    }
+
+    // using useEffect to generate initial question set
+    const [questionArr, setQuestionArr] = useState([]);
+    useEffect(() => {
+        const resultArray = generateRandomQuestionArr();
+        setQuestionArr(resultArray);
+        console.log(questionArr);
+    }, []);
+
 
     const functA = () => {
-        generateRandomArrayNoDuplicate();
+        console.log(questionArr);
     }
-
-    const generateRandomArrayNoDuplicate = () => {
-        const n = questionsSet.length;
-        let resultArray = [];
-        for (let i = 0; i < noOfRound; i++) {
-            var index = 0;
-            do {
-                index = Math.floor(Math.random() * n);
-            }
-            while (resultArray.includes(index));
-            resultArray.push(index);
-        }
-        setIntegerArray(resultArray);
-    }
-
    
     return (
         <div>
-        <button onClick={generateRandomArrayNoDuplicate}>Generate Random Array</button>
-        <button onClick={functA}>Function A</button>
-        {integerArray.length > 0 && (
-            <div>
-            <h3>Random Integer Array:</h3>
-            <ul>
-                {integerArray.map((num, index) => (
-                <li key={index}>{num}</li>
-                ))}
-            </ul>
-            </div>
-        )}
+        <button onClick={functA}>Function A</button><br/>
         </div>
     );
 }
