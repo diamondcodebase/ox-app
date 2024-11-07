@@ -44,10 +44,29 @@ function RandomIntegerArray() {
         setIntegerArray(newArray);
     };
 
+    const functA = () => {
+        generateRandomArrayNoDuplicate();
+    }
+
+    const generateRandomArrayNoDuplicate = () => {
+        const n = questionsSet.length;
+        let resultArray = [];
+        for (let i = 0; i < noOfRound; i++) {
+            var index = 0;
+            do {
+                index = Math.floor(Math.random() * n);
+            }
+            while (resultArray.includes(index));
+            resultArray.push(index);
+        }
+        setIntegerArray(resultArray);
+    }
+
    
     return (
         <div>
-        <button onClick={generateRandomArray}>Generate Random Array</button>
+        <button onClick={generateRandomArrayNoDuplicate}>Generate Random Array</button>
+        <button onClick={functA}>Function A</button>
         {integerArray.length > 0 && (
             <div>
             <h3>Random Integer Array:</h3>
