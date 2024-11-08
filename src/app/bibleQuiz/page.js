@@ -254,13 +254,13 @@ export default function BibleQuiz() {
                 <div className='flex justify-center mb-4 flex-row items-center'>
                     <ImageButton 
                         btnLabel="Right" 
-                        imgSrc="/ThisIsRight.png" 
+                        imgSrc="/Right_Transparent_BG.png" 
                         onClickFn={() => getShowAnswer(true)} 
                         visible={isGameStarted && !isConfirmed}
                     />
                     <ImageButton
                         btnLabel="Wrong"
-                        imgSrc="/ThisIsWrong.png"
+                        imgSrc="/Wrong_Transparent_BG.png"
                         onClickFn={() => getShowAnswer(false)}
                         visible={isGameStarted && !isConfirmed}
                     />
