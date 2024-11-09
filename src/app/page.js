@@ -79,7 +79,7 @@ export default function Home() {
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-green-900`}>
+            <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-green-900`}>
             { contentText.mainpage.aboutS }
             </p>
           </Link>
@@ -97,7 +97,7 @@ export default function Home() {
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-red-900`}>
+            <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-red-900`}>
               Learn more about Canada!
             </p>
           </Link>           
@@ -113,7 +113,7 @@ export default function Home() {
                 -&gt;
               </span>
             </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance text-purple-900`}>
+            <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-balance text-purple-900`}>
               Learn more about Hong Kong!
             </p>
           </Link>
@@ -131,7 +131,7 @@ export default function Home() {
                   -&gt;
                 </span>
               </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-yellow-900`}>
+              <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-yellow-900`}>
                 { contentText.mainpage.bibleOXS }
               </p>
           </Link>
