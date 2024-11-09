@@ -140,7 +140,12 @@ export default function BibleQuiz() {
     return (
         <body>
             <header>{currentLanguage}</header>
-            <main className="flex min-h-screen flex-col items-center justify-between p-10">
+            <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-clip-border"
+                style={{backgroundImage: `url(/canadaOX_BG.jpg)`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundAttachment: "fixed"                              
+            }}>
                 <div className='text-5xl font-bold p-3 m-3'>Canada OX Challenge</div>
                 <CountDownTimer 
                     secLimit = {15} 
@@ -169,13 +174,13 @@ export default function BibleQuiz() {
                 <div className='flex justify-center mb-4 flex-row items-center'>
                     <ImageButton 
                         btnLabel="Right" 
-                        imgSrc="/ThisIsRight.png" 
+                        imgSrc="/Right_Transparent_BG.png" 
                         onClickFn={() => getShowAnswer(true)} 
                         visible={isGameStarted && !isConfirmed}
                     />
                     <ImageButton
                         btnLabel="Wrong"
-                        imgSrc="/ThisIsWrong.png"
+                        imgSrc="/Wrong_Transparent_BG.png"
                         onClickFn={() => getShowAnswer(false)}
                         visible={isGameStarted && !isConfirmed}
                     />

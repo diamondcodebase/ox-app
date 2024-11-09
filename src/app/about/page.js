@@ -11,7 +11,12 @@ export default function About() {
     return (
         <body>
             <header></header>
-            <main className="flex min-h-screen flex-col items-center justify-between p-24">
+            <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-clip-border"
+                style={{backgroundImage: `url(/about_BG.jpg)`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundAttachment: "fixed"                              
+            }}>
                 <div className='text-3xl font-bold'>About</div>
                 <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
                     <p>This is a testing paragraph</p>
