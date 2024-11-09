@@ -225,7 +225,12 @@ export default function BibleQuiz() {
     return (
         <body>
             <header>{currentLanguage}</header>
-            <main className="flex min-h-screen flex-col items-center justify-between p-10">
+            <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-clip-border"
+                style={{backgroundImage: `url(/bibleOX_BG.jpg)`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundAttachment: "fixed"                              
+            }}>
                 <div className='text-5xl font-bold p-3 m-3'>Bible OX Challenge</div>
                 <CountDownTimer 
                     secLimit = {15} 
