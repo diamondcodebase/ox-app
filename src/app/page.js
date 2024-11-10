@@ -9,6 +9,7 @@ import React, { useState, useEffect } from 'react';
 
 // For passing current lang state
 import Link from "next/link"; // import the Link Tag
+
 // import translation from "@/data/translation";
 import contentText from "@/data/contentText";
 import { useSearchParams } from "next/navigation";
@@ -51,12 +52,7 @@ export default function Home() {
   return (
     <body>
       <header>
-        {/* <LanguageSelector 
-          FnChangeEng={ () => setCurrentLanguage('en') }
-          FnChangeChi={ () => setCurrentLanguage('zh') }
-          FnChangeJap={ () => setCurrentLanguage('ja') } 
-          currentLang={currentLanguage}
-        /> */}
+
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24" 
             style={{backgroundImage: `url(/plant_bg.jpg)`,
@@ -70,7 +66,7 @@ export default function Home() {
               pathname: "/about",
               query: { currentLanguage: currentLanguage }
             }}   
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-200/50 hover:dark:border-green-500 hover:dark:bg-green-200/50"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-green-500 hover:bg-green-200/50"
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-3xl font-bold text-green-800`}>
@@ -88,9 +84,16 @@ export default function Home() {
             href={{
               pathname: "/canadaQuiz"
             }}  
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-red-300 hover:bg-red-200/40 hover:dark:border-red-300 hover:dark:bg-red-200/40"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-red-300 hover:bg-red-200/40 hover:dark:border-red-300 hover:dark:bg-red-200/40"
             rel="noopener noreferrer"
           >
+            <Image
+              src="/maple.png"
+              alt="An image"
+              width={100}
+              height={100}
+              className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-40"
+            />
             <h2 className={`mb-3 text-3xl font-bold text-red-800`}>
               Canada OX{" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -104,7 +107,7 @@ export default function Home() {
 
           <Link
             href="/hongkongQuiz"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
             rel="noopener noreferrer"
           >
             <h2 className={`mb-3 text-3xl font-bold text-purple-800`}>
@@ -122,7 +125,7 @@ export default function Home() {
             href={{
               pathname: "/bibleQuiz"
             }}           
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
             rel="noopener noreferrer"
           >            
               <h2 className={`mb-3 text-3xl font-bold text-yellow-800`}>
