@@ -69,6 +69,13 @@ export default function Home() {
             className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-green-500 hover:bg-green-200/50"
             rel="noopener noreferrer"
           >
+          <Image
+            src="/greenLeave.png"
+            alt="Green Leave image"
+            width={100}
+            height={100}
+            className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:opacity-40"
+          />
             <h2 className={`mb-3 text-3xl font-bold text-green-800`}>
               { contentText.mainpage.about }
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -89,10 +96,10 @@ export default function Home() {
           >
             <Image
               src="/maple.png"
-              alt="An image"
+              alt="Maple image"
               width={100}
               height={100}
-              className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-40"
+              className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:opacity-40"
             />
             <h2 className={`mb-3 text-3xl font-bold text-red-800`}>
               Canada OX{" "}
@@ -110,6 +117,13 @@ export default function Home() {
             className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
             rel="noopener noreferrer"
           >
+            <Image
+              src="/bauhinia.png"
+              alt="Bauhinia image"
+              width={100}
+              height={100}
+              className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-6 group-hover:scale-125 group-hover:opacity-40"
+            />
             <h2 className={`mb-3 text-3xl font-bold text-purple-800`}>
               Hong Kong OX{" "}
               <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
@@ -127,16 +141,23 @@ export default function Home() {
             }}           
             className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
             rel="noopener noreferrer"
-          >            
-              <h2 className={`mb-3 text-3xl font-bold text-yellow-800`}>
-                { contentText.mainpage.bibleOX }
-                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                  -&gt;
-                </span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-yellow-900`}>
-                { contentText.mainpage.bibleOXS }
-              </p>
+          >
+            <Image
+              src="/pigeon.png"
+              alt="Pigeon image"
+              width={100}
+              height={100}
+              className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-12 group-hover:scale-150 group-hover:opacity-40"
+            />            
+            <h2 className={`mb-3 text-3xl font-bold text-yellow-800`}>
+              { contentText.mainpage.bibleOX }
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-yellow-900`}>
+              { contentText.mainpage.bibleOXS }
+            </p>
           </Link>
         
         </div>
