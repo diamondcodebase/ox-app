@@ -166,11 +166,11 @@ export default function Home() {
           <TextS content="My name is Diamond" strong={true} />
           <TextS content="This is my first React.js app" strong = {false} />
         </div> */}
-        <div className="mb-32 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+        {/* <div className="mb-32 grid text-center lg:max-w-6xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
           { posts.map((content, idx) => {
             return <PostC {...content} key={idx} />
           }) }
-        </div>
+        </div> */}
       </main>
     </body>
 
