@@ -70,7 +70,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
           <Image
-            src="/greenLeave.png"
+            src="/greenLeave1.png"
             alt="Green Leave image"
             width={100}
             height={100}
@@ -95,7 +95,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/maple.png"
+              src="/maple1.png"
               alt="Maple image"
               width={100}
               height={100}
@@ -118,7 +118,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/bauhinia.png"
+              src="/bauhinia1.png"
               alt="Bauhinia image"
               width={100}
               height={100}
@@ -143,7 +143,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              src="/pigeon.png"
+              src="/pigeon1.png"
               alt="Pigeon image"
               width={100}
               height={100}
