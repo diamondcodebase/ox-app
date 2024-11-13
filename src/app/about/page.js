@@ -9,10 +9,10 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Mo
 
 export default function About() {
     const FadeMoveOut = batch(Sticky(), Fade(), MoveOut(0,-200));
-    const ZoomInScrollOut = batch(StickyIn(), FadeIn(), Zoom());
+    const ZoomInScrollOut = batch(ZoomIn(), FadeIn(), Sticky(), MoveOut(0,-200));
     const FadeUp = batch(Fade(), Move(), Sticky());
     const CastUp = batch(Sticky(), FadeIn(), MoveOut(-100,0));
-    const FadeSticky = batch(Fade(), Sticky());
+    const FadeSticky = batch(Fade(), Sticky(), FadeOut());
 
     return (
         <ScrollContainer>
@@ -39,31 +39,31 @@ export default function About() {
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={ZoomInScrollOut}>
-                    <h2>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         Inspired by an online game featuring true or false mini-games, I suggested to my pastor that I could create a Bible verse true or false game for our church group.
-                    </h2>
+                    </div>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={FadeUp}>
-                    <h2>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         The early stages of development were quite challenging since I did not have any prior experience in web development.
-                    </h2>
-                    <h2>
+                    </div>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         I learned about Google App Scripts through YouTube and tried to implement it using Google Drive and Google Sheets as a database.
-                    </h2>
+                    </div>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={ZoomInScrollOut}>
-                    <h2>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         Eventually, I was able to launch a series of Bible verse OX games, which my church group really enjoyed playing.
-                    </h2>
+                    </div>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={FadeUp}>             
-                    <div>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         This website is an extension of the original Bible OX game.
                         I have added two more features: a Hong Kong OX game and a Canada OX game. 
                     </div>
@@ -71,7 +71,9 @@ export default function About() {
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={FadeSticky}>
-                Hope you Enjoy!
+                    <div className='text-2xl font-bold p-3 m-3'>
+                        Hope you Enjoy!
+                    </div>                
                 </Animator>
             </ScrollPage>
             <ScrollPage>
