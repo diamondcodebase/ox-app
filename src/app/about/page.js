@@ -19,49 +19,59 @@ export default function About() {
             <div className='text-3xl font-bold p-3 m-3'>About This Web</div>
             <ScrollPage>
                 <Animator animation={FadeMoveOut}>
-                    <h2>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         The origin of this web came to me in 2021.
-                    </h2>
-                    <h2>
+                    </div>
+                    <div className='text-2xl font-bold p-3 m-3'>
                         During that year, we were still facing the threat of COVID-19, which led to bans on large gatherings. 
-                    </h2>
+                    </div>
+                    <div className='text-2xl font-bold p-3 m-3'>
+                        This really affected our daily lives, including my church activities.
+                    </div>
+                </Animator>
+            </ScrollPage>
+            <ScrollPage>
+                <Animator animation={FadeUp}>
+                    <div className='text-2xl font-bold p-3 m-3'>
+                        At that time, my pastor was looking for interactive and creative ways to read the Bible with our church community.
+                    </div>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={ZoomInScrollOut}>
                     <h2>
-                        This really affected our daily lives, including my church activities.
+                        Inspired by an online game featuring true or false mini-games, I suggested to my pastor that I could create a Bible verse true or false game for our church group.
                     </h2>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={FadeUp}>
                     <h2>
-                        At that time, my pastor was looking for interactive and creative ways to read the Bible with our church community.
+                        The early stages of development were quite challenging since I did not have any prior experience in web development.
+                    </h2>
+                    <h2>
+                        I learned about Google App Scripts through YouTube and tried to implement it using Google Drive and Google Sheets as a database.
                     </h2>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
-                <Animator animation={ZoomInScrollOut}>                
-                    
-                    <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-                        <div className="row-auto text-xl bg-green-200/50 border-green-900 border-2 rounded-md p-3 text-gray-700 justify-center">
-                            
-                              <br/>
-                            Inspired by an online game featuring true or false mini-games, I suggested to my pastor that I could create a Bible verse true or false game for our church group. 
-                            The early stages of development were quite challenging since I did not have any prior experience in web development.
-                            I learned about Google App Scripts through YouTube and tried to implement it using Google Drive and Google Sheets as a database. 
-                            Eventually, I was able to launch a series of Bible verse OX games, which my church group really enjoyed playing. <br/>
-                            This website is an extension of the original Bible OX game.
-                            I have added two more features: a Hong Kong OX game and a Canada OX game. 
-                            Hope this help you if you want to learn more about Hong Kong and Canada.
-                        </div>
+                <Animator animation={ZoomInScrollOut}>
+                    <h2>
+                        Eventually, I was able to launch a series of Bible verse OX games, which my church group really enjoyed playing.
+                    </h2>
+                </Animator>
+            </ScrollPage>
+            <ScrollPage>
+                <Animator animation={FadeUp}>             
+                    <div>
+                        This website is an extension of the original Bible OX game.
+                        I have added two more features: a Hong Kong OX game and a Canada OX game. 
                     </div>
                 </Animator>
             </ScrollPage>
             <ScrollPage>
                 <Animator animation={FadeSticky}>
-                    Enjoy!
+                Hope you Enjoy!
                 </Animator>
             </ScrollPage>
             <ScrollPage>
