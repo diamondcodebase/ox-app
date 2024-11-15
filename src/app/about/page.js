@@ -1,8 +1,10 @@
 "use client";
 import BasicButtonPanel from "@/components/BasicButtonPanel"
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useRef } from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
 // import { useSearchParams } from "next/navigation";
 // For passing current lang state
@@ -11,71 +13,122 @@ import { useRef } from "react";
 
 
 export default function About() {
-    const FadeMoveOut = batch(Sticky(), Fade(), MoveOut(0,-200));
-    const ZoomInScrollOut = batch(ZoomIn(), FadeIn(), Sticky(), MoveOut(0,-200));
-    const FadeUp = batch(Fade(), Move(), Sticky());
-    const CastUp = batch(Sticky(), FadeIn(), MoveOut(-100,0));
-    const FadeSticky = batch(Fade(), Sticky(), FadeOut(), MoveOut(-200,0));
-
+    const FadeMoveOut = batch(Fade(), Sticky(), MoveOut(0,-500));
+    const ZoomInScrollOut = batch(Sticky(), FadeIn(), ZoomIn(), MoveOut(0,-800))
+    //const ZoomInScrollOut = batch(ZoomIn(), FadeIn(), Sticky(), MoveOut(0,-200));
+    const MoveInOut = batch(MoveIn(-1000,0), Sticky(), Fade(), MoveOut(1000,0));
+    const CastUp = batch(Fade(), Sticky(), MoveOut(0,1000));
+    const FadeSticky = batch(Fade(), Sticky(), FadeOut(), MoveOut(-500,0));
+    
     return (
         <div>
             <ScrollContainer>
-                <div className='text-3xl font-bold p-3 m-3'>About This Web</div>
                 <ScrollPage>
                     <Animator animation={FadeMoveOut}>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            The origin of this web came to me in 2021.
-                        </div>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            During that year, we were still facing the threat of COVID-19, which led to bans on large gatherings. 
-                        </div>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            This really affected our daily lives, including my church activities.
+                        <div className='flex flex-row items-center'>
+                            <div className='text-3xl font-bold p-3 m-3'>About This Web</div>
+                            <Image src="/web.png" alt="About web image"
+                                width={250}
+                                height={250}/>
                         </div>
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
-                    <Animator animation={FadeUp}>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            At that time, my pastor was looking for interactive and creative ways to read the Bible with our church community.
+                    <Animator animation={FadeMoveOut}>
+                        <div className='flex flex-row items-center'>
+                            <Image src="/covid.png" alt="Covid image"
+                                    width={250}
+                                    height={250}/>
+                            <div>
+                                <div className='text-2xl font-bold p-3 m-3'>
+                                    The origin of this web came to me in 2021.
+                                </div>
+                                <div className='text-2xl font-bold p-3 m-3'>
+                                    During that year, we were still facing the threat of COVID-19, which led to bans on large gatherings. 
+                                </div>
+                                <div className='text-2xl font-bold p-3 m-3'>
+                                    This really affected our daily lives, including my church activities.
+                                </div>
+                            </div>
+                        </div>                       
+                    </Animator>
+                </ScrollPage>
+                <ScrollPage>
+                    <Animator animation={FadeMoveOut}>
+                        <div className='flex flex-row items-center'>
+                            <div className='text-2xl font-bold p-3 m-3'>
+                                At that time, my pastor was looking for interactive and creative ways to read the Bible with our church community.
+                            </div>
+                            <Image src="/guide.png" alt="Guide image"
+                                width={250}
+                                height={250}/>
                         </div>
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
                     <Animator animation={ZoomInScrollOut}>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            Inspired by an online game featuring true or false mini-games, I suggested to my pastor that I could create a Bible verse true or false game for our church group.
+                        <div className='flex flex-row items-center'>
+                        <Image src="/inspire.png" alt="Inspire image"
+                                width={250}
+                                height={250}/>
+                            <div className='text-2xl font-bold p-3 m-3'>
+                                Inspired by an online game featuring true or false mini-games, I suggested to my pastor that I could create a Bible verse true or false game for our church group.
+                            </div>
                         </div>
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
-                    <Animator animation={FadeUp}>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            The early stages of development were quite challenging since I did not have any prior experience in web development.
-                        </div>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            I learned about Google App Scripts through YouTube and tried to implement it using Google Drive and Google Sheets as a database.
-                        </div>
+                    <Animator animation={MoveInOut}>
+                        <div className='flex flex-row items-center'>
+                            <div>
+                                <div className='text-2xl font-bold p-3 m-3'>
+                                    The early stages of development were quite challenging since I did not have any prior experience in web development.
+                                </div>
+                                <div className='text-2xl font-bold p-3 m-3'>
+                                    I learned about Google App Scripts through YouTube and tried to implement it using Google Drive and Google Sheets as a database.
+                                </div>
+                            </div>
+                            <Image src="/struggle.png" alt="Struggling image"
+                                    width={250}
+                                    height={250}/>
+                        </div>                        
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
-                    <Animator animation={ZoomInScrollOut}>
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            Eventually, I was able to launch a series of Bible verse OX games, which my church group really enjoyed playing.
-                        </div>
+                    <Animator animation={FadeMoveOut}>
+                        <div className='flex flex-row items-center'>
+                            <Image src="/enjoy.png" alt="Enjoy image"
+                                        width={250}
+                                        height={250}/>
+                            <div className='text-2xl font-bold p-3 m-3'>
+                                Eventually, I was able to launch a series of Bible verse OX games, which my church group really enjoyed playing.
+                            </div>
+                            <Image src="/trueOrFalse.png" alt="TrueFalse image"
+                                        width={250}
+                                        height={250}/>
+                        </div>                        
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
-                    <Animator animation={FadeUp}>             
-                        <div className='text-2xl font-bold p-3 m-3'>
-                            This website is an extension of the original Bible OX game.
-                            I have added two more features: a Hong Kong OX game and a Canada OX game. 
-                        </div>
+                    <Animator animation={FadeMoveOut}>
+                        <div className='flex flex-row items-center'>
+                            <Image src="/bauhinia.png" alt="Bauhinia image"
+                                            width={200}
+                                            height={200}/>
+                            <div className='text-2xl font-bold p-3 m-3'>
+                                This website is an extension of the original Bible OX game.
+                                I have added two more features: a Hong Kong OX game and a Canada OX game. 
+                            </div>
+                            <Image src="/mapleLeaf.png" alt="Maple image"
+                                            width={200}
+                                            height={200}/>
+                        </div>             
+                        
                     </Animator>
                 </ScrollPage>
                 <ScrollPage>
-                    <Animator animation={FadeSticky}>
-                        <div className='text-2xl font-bold p-3 m-3'>
+                    <Animator animation={CastUp}>
+                        <div className='text-4xl font-bold p-3 m-3'>
                             Hope you Enjoy!
                         </div>                
                     </Animator>
@@ -94,12 +147,13 @@ export default function About() {
                     </span>
                 </div>
             </div>
-           
+
             <BasicButtonPanel />
         </div>        
     );
 }
 
+// Horizontal Scroll Carousel
 const HorizontalScrollCarousel = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -113,7 +167,7 @@ const HorizontalScrollCarousel = () => {
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
+            return <BlockCard card={card} key={card.id} />;
           })}
         </motion.div>
       </div>
@@ -121,7 +175,7 @@ const HorizontalScrollCarousel = () => {
   );
 };
 
-const Card = ({ card }) => {
+const BlockCard = ({ card }) => {
   return (
     <div
       key={card.id}
@@ -145,7 +199,7 @@ const Card = ({ card }) => {
       </div>
     </div>
   );
-};
+};  
 
 const cards = [
     {
@@ -165,19 +219,19 @@ const cards = [
         id: 3,
     },
     {
-      url: "/imgs/abstract/3.jpg",
-      title: "As time went on, a significant shift pushed me toward coding.",
-      id: 3,
+        url: "/imgs/abstract/3.jpg",
+        title: "As time went on, a significant shift pushed me toward coding.",
+        id: 3,
     },
     {
-      url: "/imgs/abstract/4.jpg",
-      title: "I was amazed by how software could automate tasks.",
-      id: 4,
+        url: "/imgs/abstract/4.jpg",
+        title: "I was amazed by how software could automate tasks.",
+        id: 4,
     },
     {
-      url: "/imgs/abstract/5.jpg",
-      title: "Being a software developer, I am happy to explore this new tech field.",
-      id: 5,
+        url: "/imgs/abstract/5.jpg",
+        title: "Being a software developer, I am happy to explore this new tech field.",
+        id: 5,
     },
     {
         url: "/imgs/abstract/5.jpg",
@@ -199,4 +253,4 @@ const cards = [
         title: "I would be excited if one day I could work with you, fork~",
         id: 8,
     },
-  ];
+];
