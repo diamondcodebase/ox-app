@@ -1,7 +1,7 @@
 "use client";
 import BasicButtonPanel from "@/components/BasicButtonPanel";
 import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 export default function About() {
