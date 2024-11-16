@@ -11,7 +11,7 @@ import Service from '@/components/about/Service';
 import Team from '@/components/about/Team';
 import Team2 from '@/components/about/Team2';
 import Team3 from '@/components/about/Team3';
-import Mainpg from '@/components/about/mainpg';
+
 import Projects from '@/components/about/Projects';
 
 
