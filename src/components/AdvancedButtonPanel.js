@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 
 import { useSearchParams } from "next/navigation";
-import CustomButtonA from "@/components/CustomButtonA";
+import CustomButton from "@/components/CustomButton";
 //import translation from "@/data/translation";
 import contentText from "@/data/contentText";
 
@@ -15,15 +15,9 @@ export default function AdvancedButtonPanel(currentLanguage){
 
     return (
         <div className='flex justify-center mb-4 flex-row items-center'>
-            {/* <CustomButtonA 
-                pathname="Back"
-                query = {{ currentLanguage: currentLanguage }} 
-                displayText={currentLanguage}
-            /> */}
-            <CustomButtonA 
-                pathname="../" 
-                // query = {{ currentLanguage: currentLanguage }}
-                displayText={displayTextHome}
+            <CustomButton 
+                btnLabel="Home" 
+                hrefLink ="../"
             />
         </div>
     );
