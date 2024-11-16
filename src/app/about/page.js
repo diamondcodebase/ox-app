@@ -4,29 +4,12 @@ import { Animator, ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Mo
 import React, { useState } from "react";
 import Image from "next/image";
 
-import HorizontalScroll from "@/components/about/HorizontalScroll";
-import Clients from '@/components/about/Clients';
-import Data from '@/components/about/Data';
-import Service from '@/components/about/Service';
-import Team from '@/components/about/Team';
-import Team2 from '@/components/about/Team2';
-import Team3 from '@/components/about/Team3';
-
-import Projects from '@/components/about/Projects';
-
-
-// import { useSearchParams } from "next/navigation";
-// For passing current lang state
-//import Link from "next/link"; // import the Link Tag
-//import translation from "@/data/translation";
-
-
 export default function About() {
     const FadeMoveOut = batch(Fade(), Sticky(), MoveOut(0,-500));
     const ZoomInScrollOut = batch(Sticky(), FadeIn(), ZoomIn(), MoveOut(0,-800))
     //const ZoomInScrollOut = batch(ZoomIn(), FadeIn(), Sticky(), MoveOut(0,-200));
     const MoveInOut = batch(MoveIn(-1000,0), Sticky(), Fade(), MoveOut(1000,0));
-    const CastUp = batch(Fade(), Sticky(), MoveOut(0,1000));
+    const CastUp = batch(Fade(), Sticky(), MoveOut(0,-1000), FadeOut());
     const FadeSticky = batch(Fade(), Sticky(), FadeOut(), MoveOut(-500,0));
     
     return (
@@ -143,20 +126,11 @@ export default function About() {
                             </div>                
                         </Animator>
                     </ScrollPage>
+                    <ScrollPage>
+                        
+                    </ScrollPage>
                 </ScrollContainer>
             </section>
-            <section id='about_me'>
-                {/* <About />
-                <Service />
-                <Projects />
-                <Data />
-                <Clients />
-                <Team />
-                <Team2 />
-                <Team3 /> */}
-                <HorizontalScroll />
-            </section>          
-
             <BasicButtonPanel />
         </div>        
     );
