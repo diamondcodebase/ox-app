@@ -11,8 +11,8 @@ export default function TextTyping({textInput}) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
-            duration: 0.25,
-            delay: i / 10,
+            duration: 0.5,
+            delay: i / 5,
           }}
           key={i}
         >
