@@ -1,11 +1,11 @@
-import "./style.css";
+import "./TextTyping.css";
 import { motion } from "framer-motion";
 
 export default function TextTyping({textInput}) {
   const text = textInput.split(" ");
 
   return (
-    <div className="TextTyping">
+    <section id="texttyping">
       {text.map((el, i) => (
         <motion.span
           initial={{ opacity: 0 }}
@@ -19,6 +19,6 @@ export default function TextTyping({textInput}) {
           {el}{" "}
         </motion.span>
       ))}
-    </div>
+    </section>
   );
 }
