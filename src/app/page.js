@@ -55,7 +55,7 @@ export default function Home() {
 
       </header>
       <main className="flex min-h-screen flex-col items-center justify-between p-24" 
-            style={{backgroundImage: `url(/plant_bg.jpg)`,
+            style={{backgroundImage: `url(/mainpage_bg.png)`,
                     backgroundRepeat: "no-repeat",
                     backgroundSize: "cover"
       }}>
@@ -160,6 +160,31 @@ export default function Home() {
             </p>
           </Link>
         
+          <Link
+            href={{
+              pathname: "/aboutMe",
+              query: { currentLanguage: currentLanguage }
+            }}   
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-blue-500 hover:bg-blue-200/50"
+            rel="noopener noreferrer"
+          >
+          <Image
+            src="/diamond.png"
+            alt="Diamond image"
+            width={100}
+            height={100}
+            className="rounded-md opacity-0 object-cover ease-in-out duration-300 group-hover:rotate-12 group-hover:scale-125 group-hover:opacity-40"
+          />
+            <h2 className={`mb-3 text-3xl font-bold text-blue-800`}>
+              { contentText.mainpage.aboutMe }
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-blue-900`}>
+            { contentText.mainpage.aboutMeS }
+            </p>
+          </Link>
         </div>
         {/* <div>
           <TextIn content="Hello World" />
