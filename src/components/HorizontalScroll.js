@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 const Example = () => {
   return (
-    <div className="bg-neutral-800">
+    <div className="bg-transparent">
       <HorizontalScrollCarousel />
     </div>
   );
