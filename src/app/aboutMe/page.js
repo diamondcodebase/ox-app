@@ -2,6 +2,7 @@
 import TextTyping from "@/components/TextTyping";
 import TextTypingS from "@/components/TextTypingS";
 import LoadingExample from "@/components/LoadingExample";
+import FlashCardStack from "@/components/FlashCardStack";
 import DropDownMenu from "@/components/DropdownMenu";
 import Stagger from "@/components/Stagger";
 import BasicButtonPanel from "@/components/BasicButtonPanel";
@@ -27,6 +28,7 @@ export default function AboutMe() {
             <TextTypingS textInput={sentence2} />
             <TextTyping textInput={sentence3} />
             <LoadingExample />
+            <FlashCardStack />
 
         </main>
     );
