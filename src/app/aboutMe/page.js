@@ -1,7 +1,7 @@
 "use client";
 import TextTyping from "@/components/TextTyping";
 import TextTypingS from "@/components/TextTypingS";
-import LoadingExample from "@/components/LoadingExample";
+import GifImageSection from "@/components/GifImageSection";
 import FlashCardStack from "@/components/FlashCardStack";
 import DropDownMenu from "@/components/DropdownMenu";
 import Stagger from "@/components/Stagger";
@@ -19,6 +19,7 @@ export default function AboutMe() {
     const sentence8 = "Working with teams with different talents, bringing projects to life drive my motivation.";
     const sentence9 = "I would be excited if one day I could work with you, fork~";
 
+    const imageSrc5 = "./gear.gif";
 
 
     return (
@@ -27,7 +28,7 @@ export default function AboutMe() {
             <TextTyping textInput={sentence1} />
             <TextTypingS textInput={sentence2} />
             <TextTyping textInput={sentence3} />
-            <LoadingExample />
+            <GifImageSection displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
             <FlashCardStack />
 
         </main>
