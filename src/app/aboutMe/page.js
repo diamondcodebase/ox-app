@@ -1,6 +1,7 @@
 "use client";
 import TextTyping from "@/components/TextTyping";
 import TextTypingS from "@/components/TextTypingS";
+import Section4 from "@/components/Section4";
 import GifImageSection from "@/components/GifImageSection";
 import FlashCardStack from "@/components/FlashCardStack";
 import DropDownMenu from "@/components/DropdownMenu";
@@ -28,6 +29,7 @@ export default function AboutMe() {
             <TextTyping textInput={sentence1} />
             <TextTypingS textInput={sentence2} />
             <TextTyping textInput={sentence3} />
+            <Section4 displayText={sentence4}/>
             <GifImageSection displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
             <FlashCardStack />
 
