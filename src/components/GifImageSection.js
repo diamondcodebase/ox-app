@@ -2,23 +2,23 @@ import React from 'react';
 import { motion } from "framer-motion";
 
 export default function GifImageSection({displayText, imageSrc, alt}) {
-    const displayCoding = "Sub AutoFitRows()";
-    const displayCoding2 = "Cells.Select";
-    const displayCoding3 = "Cells.EntireRow.AutoFit";
-    const displayCoding4 = "End Sub";
-    const displayCodingSplit = displayCoding.split(" ");
-    const displayCodingSplit2 = displayCoding2.split(" ");
-    const displayCodingSplit3 = displayCoding3.split(" ");
-    const displayCodingSplit4 = displayCoding4.split(" ");
+    // const displayCoding = "Sub AutoFitRows()";
+    // const displayCoding2 = "Cells.Select";
+    // const displayCoding3 = "Cells.EntireRow.AutoFit";
+    // const displayCoding4 = "End Sub";
+    // const displayCodingSplit = displayCoding.split(" ");
+    // const displayCodingSplit2 = displayCoding2.split(" ");
+    // const displayCodingSplit3 = displayCoding3.split(" ");
+    // const displayCodingSplit4 = displayCoding4.split(" ");
     return (
         <div>
             {
-                <div className='flex flex-row items-center'>
-                    <div className='text-2xl font-bold p-3 m-3'>
+                <div className='flex flex-col items-center justify-between'>
+                    <div className='text-5xl font-bold p-3 m-3'>
                         { displayText }
                     </div>
                     <div>
-                        <div className='text-lg font-bold p-3 m-3 items-start'>
+                        {/* <div className='text-lg font-bold p-3 m-3 items-start'>
                             <section id="codingDisplay">
                                 <div>
                                     {displayCodingSplit.map((el, i) => (
@@ -81,7 +81,7 @@ export default function GifImageSection({displayText, imageSrc, alt}) {
                                     ))}
                                 </div>
                             </section>
-                        </div>
+                        </div> */}
                         <img src= { imageSrc } alt= { alt } />
                     </div>
                     
