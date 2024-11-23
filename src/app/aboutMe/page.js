@@ -2,7 +2,7 @@
 import TextTyping from "@/components/TextTyping";
 import TextTypingS from "@/components/TextTypingS";
 import Section4 from "@/components/Section4";
-import GifImageSection from "@/components/GifImageSection";
+import Section5 from "@/components/Section5";
 import FlashCardStack from "@/components/FlashCardStack";
 import DropDownMenu from "@/components/DropdownMenu";
 import Stagger from "@/components/Stagger";
@@ -30,7 +30,7 @@ export default function AboutMe() {
             <TextTypingS textInput={sentence2} />
             <TextTyping textInput={sentence3} />
             <Section4 displayText={sentence4}/>
-            <GifImageSection displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
+            <Section5 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
             <FlashCardStack />
 
         </main>

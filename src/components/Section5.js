@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion";
 
-export default function GifImageSection({displayText, imageSrc, alt}) {
+export default function Section5({displayText, imageSrc, alt}) {
     // const displayCoding = "Sub AutoFitRows()";
     // const displayCoding2 = "Cells.Select";
     // const displayCoding3 = "Cells.EntireRow.AutoFit";
