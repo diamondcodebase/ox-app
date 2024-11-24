@@ -1,4 +1,5 @@
 import { motion, useCycle } from "framer-motion";
+import { useState } from "react";
 
 export default function RotateSquareButton() {
     const [animate, cycle] = useCycle(
@@ -17,6 +18,8 @@ export default function RotateSquareButton() {
             }}
             animate={animate}
             onTap={cycle}
-        />
+        >
+            <p>Engineer</p>
+        </motion.div>
     );
 }
