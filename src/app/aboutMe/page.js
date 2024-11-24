@@ -3,6 +3,7 @@ import TextTyping from "@/components/TextTyping";
 import TextTypingS from "@/components/TextTypingS";
 import Section4 from "@/components/Section4";
 import Section5 from "@/components/Section5";
+import Section6 from "@/components/Section6";
 import FlashCardStack from "@/components/FlashCardStack";
 import DropDownMenu from "@/components/DropdownMenu";
 import Stagger from "@/components/Stagger";
@@ -31,6 +32,7 @@ export default function AboutMe() {
             <TextTyping textInput={sentence3} />
             <Section4 displayText={sentence4}/>
             <Section5 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
+            <Section6 />
             <FlashCardStack />
 
         </main>
