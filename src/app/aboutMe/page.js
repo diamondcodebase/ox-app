@@ -32,10 +32,10 @@ export default function AboutMe() {
             <TextTypingS textInput={sentence2} />
             <Section2 displayText={sentence2} />
             <TextTyping textInput={sentence3} />
-            <Section4 displayText={sentence4}/>
+            <Section4 displayText={sentence4} />
             <Section5 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
-            <Section6 />
-            <Section7 displayText={sentence7}/>
+            <Section6 displayText={sentence6} />
+            <Section7 displayText={sentence7} />
 
         </main>
     );
