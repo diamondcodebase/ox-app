@@ -1,9 +1,9 @@
-import TextTypingS from "@/components/TextTypingS";
+import TextTyping from "@/components/TextTyping";
 
 export default function OpenBanner({displayText}){
     return (
         <main>            
-            <TextTypingS textInput={displayText} />
+            <TextTyping textInput={displayText} />
         </main>
     )
 }
