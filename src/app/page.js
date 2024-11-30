@@ -1,10 +1,6 @@
 "use client";
 import Image from "next/image";
 import LanguageSelector from "@/components/LanguageSelector";
-import { Post } from "@/components/Post";
-import PostC from "@/components/PostC";
-import PostD from "@/components/PostDefault";
-import TextS, {TextIn} from "@/components/TextS";
 import React, { useState, useEffect } from 'react';
 
 // For passing current lang state
@@ -66,7 +62,7 @@ export default function Home() {
               pathname: "/about",
               query: { currentLanguage: currentLanguage }
             }}   
-            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-green-500 hover:bg-green-200/50"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-green-500 hover:bg-green-200/50"
             rel="noopener noreferrer"
           >
           <Image
@@ -91,7 +87,7 @@ export default function Home() {
             href={{
               pathname: "/canadaQuiz"
             }}  
-            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-red-300 hover:bg-red-200/40 hover:dark:border-red-300 hover:dark:bg-red-200/40"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-red-300 hover:bg-red-200/40 hover:dark:border-red-300 hover:dark:bg-red-200/40"
             rel="noopener noreferrer"
           >
             <Image
@@ -114,7 +110,7 @@ export default function Home() {
 
           <Link
             href="/hongkongQuiz"
-            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-purple-300 hover:bg-purple-200/40 hover:dark:border-purple-300 hover:dark:bg-purple-200/40"
             rel="noopener noreferrer"
           >
             <Image
@@ -139,7 +135,7 @@ export default function Home() {
             href={{
               pathname: "/bibleQuiz"
             }}           
-            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-yellow-300 hover:bg-yellow-100/50 hover:dark:border-yellow-300 hover:dark:bg-yellow-100/50"
             rel="noopener noreferrer"
           >
             <Image
@@ -165,7 +161,7 @@ export default function Home() {
               pathname: "/aboutMe",
               query: { currentLanguage: currentLanguage }
             }}   
-            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 transition-colors hover:-translate-y-1 hover:scale-110 hover:border-blue-500 hover:bg-blue-200/50"
+            className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-blue-500 hover:bg-blue-200/50"
             rel="noopener noreferrer"
           >
           <Image
