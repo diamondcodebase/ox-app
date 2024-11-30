@@ -7,9 +7,6 @@ import Section5 from "@/components/Section5";
 import Section6 from "@/components/Section6";
 import Section7 from "@/components/Section7";
 import Section8 from "@/components/Section8";
-import DropDownMenu from "@/components/DropdownMenu";
-import Stagger from "@/components/Stagger";
-import BasicButtonPanel from "@/components/BasicButtonPanel";
 import React, { useState, useEffect } from 'react';
 
 export default function AboutMe() {
@@ -37,7 +34,7 @@ export default function AboutMe() {
             <Section5 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
             <Section6 displayText={sentence6} />
             <Section7 displayText={sentence7} />
-            <Section8 displayText={sentence8} imageSrc={imageSrc8} alt={"rotating"} />
+            <Section8 displayText={sentence8} imageSrc={imageSrc8} alt={"work_together"} />
 
         </main>
     );
