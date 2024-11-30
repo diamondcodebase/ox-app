@@ -24,7 +24,7 @@ export default function AboutMe() {
     const sentence9 = "I would be excited if one day I could work with you, fork~";
 
     const imageSrc5 = "./gear.gif";
-    const imageSrc8 = "./gear.gif";
+    const imageSrc8 = "./work_together.png";
 
 
     return (

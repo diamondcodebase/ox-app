@@ -5,8 +5,8 @@ export default function Section8({displayText, imageSrc, alt}) {
     return (
         <div>
             {
-                <div className='flex flex-col items-center justify-between'>
-                    <div className='text-5xl font-bold p-3 m-3'>
+                <div className='flex flex-row items-center justify-between'>
+                    <div className='text-xl sm:text-3xl font-bold p-3 m-3'>
                         { displayText }
                     </div>
                     <div>
