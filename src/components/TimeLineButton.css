@@ -1,0 +1,12 @@
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    height: 80px;
+    border-radius: 10%;
+    background-color: darkblue;
+    color:antiquewhite;
+    padding: 20;
+    margin:10;
+    align-items: center;
+}

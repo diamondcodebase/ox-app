@@ -1,5 +1,5 @@
 "use client";
-import ExploringTextButton from "@/components/ExploringTextButton";
+import TimeLineButton from "@/components/TimeLineButton";
 
 export default function Section2({displayText}) {
     return (
@@ -8,7 +8,7 @@ export default function Section2({displayText}) {
             { displayText }
         </div>
         <div className=''>
-            <ExploringTextButton />
+            <TimeLineButton />
         </div>
       </div>
     );
