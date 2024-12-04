@@ -6,7 +6,7 @@ export default function Section7({displayText}) {
             <div className='text-xl sm:text-3xl font-bold p-3 m-3'>
                 { displayText }
             </div>
-            <FlashCardStack />            
+           
         </div>
     );
 };
