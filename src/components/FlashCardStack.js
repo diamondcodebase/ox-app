@@ -8,6 +8,7 @@ import {
 
 function Card(props) {
     const [exitX, setExitX] = useState(0);
+    const techArr = ["VB.Net", "C#", "MSSQL"];
 
     const x = useMotionValue(0);
     const scale = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
@@ -28,6 +29,10 @@ function Card(props) {
         initial: { scale: 0, y: 105, opacity: 0 },
         animate: { scale: 0.75, y: 30, opacity: 0.5 }
     };
+
+    function assignCardText(){
+        return props.index < techArr.length ? techArr[props.index] : "";
+    }
 
     function handleDragEnd(_, info) {
         if (info.offset.x < -100) {
@@ -69,19 +74,24 @@ function Card(props) {
             }
         >
             <motion.div
+                className='flex flex-col items-center justify-between text-2xl sm:text-4xl font-bold p-3 m-3'
                 style={{
-                    width: 150,
-                    height: 150,
-                    backgroundColor: "#33CCDD",
+                    width: 250,
+                    height: 250,
+                    backgroundColor: "#EEEE44",
                     borderRadius: 30,
-                    scale
+                    scale,
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}
-            />
+            >
+                {assignCardText()}
+            </motion.div>
         </motion.div>
     );
 }
 
-export default function Example() {
+export default function FlashCardStack() {
     const [index, setIndex] = useState(0);
 
     return (
