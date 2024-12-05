@@ -8,8 +8,6 @@ export default function RotateSquareButton({displayText}) {
         setIsRotated((prevState) => !prevState);
     };
 
-    const softwareDeveloper = "Software Developer";
-
     return (
         <motion.div className="flex flex-col items-center justify-between"
             initial={{ opacity: 0 }}
