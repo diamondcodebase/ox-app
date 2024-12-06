@@ -76,36 +76,50 @@ function Card(props) {
             <motion.div
                 className='flex flex-col items-center justify-between text-2xl sm:text-4xl font-bold p-3 m-3'
                 style={{
-                    width: 250,
-                    height: 250,
-                    backgroundColor: "#EEEE44",
+                    width: 200,
+                    height: 200,
+                    backgroundColor: "#EEDD44",
                     borderRadius: 30,
                     scale,
                     justifyContent: 'center',
-                    alignItems: 'center',
                 }}
             >
-                {assignCardText()}
+                <div>{assignCardText()}</div>
             </motion.div>
         </motion.div>
     );
 }
 
-export default function FlashCardStack() {
+export default function FlashCardStack({displayText}) {
     const [index, setIndex] = useState(0);
 
     return (
-        <motion.div style={{ width: 150, height: 150, position: "relative" }}>
-            <AnimatePresence initial={false}>
-                <Card key={index + 1} frontCard={false} />
-                <Card
-                    key={index}
-                    frontCard={true}
-                    index={index}
-                    setIndex={setIndex}
-                    drag="x"
-                />
-            </AnimatePresence>
-        </motion.div>
+        <motion.div className="flex flex-col items-center justify-between"
+            style={{
+                height: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#554422',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}
+        >
+            <div className='text-xl sm:text-3xl font-bold p-3 m-3'>
+                { displayText }
+            </div>
+            <motion.div style={{ width: 200, height: '80vh', position: "relative" }}>
+                <AnimatePresence initial={false}>
+                    <Card key={index + 1} frontCard={false} />
+                    <Card
+                        key={index}
+                        frontCard={true}
+                        index={index}
+                        setIndex={setIndex}
+                        drag="x"
+                    />
+                </AnimatePresence>
+            </motion.div>
+        </motion.div>        
     );
 }
