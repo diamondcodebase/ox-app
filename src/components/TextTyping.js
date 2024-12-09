@@ -8,20 +8,17 @@ export default function TextTyping({textInput}) {
     <motion.div
       id="texttyping" 
       className="flex flex-col items-center justify-between"
-        initial={{ opacity: 0 }}
+        initial={{ opacity: 1 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
         style={{
-          background:'#8899ee',
+          background:'#6677dd',
           height:'100vh',
-          fontSize: 46,
-          fontweight: 2,
           color:'#fff',
-          padding: 150
         }}
     >
-      <div>
+      <div className="text-5xl sm:text-7xl m-40 p-40 font-bold font-sans">
         {text.map((el, i) => (
           <motion.span
             initial={{ opacity: 0 }}

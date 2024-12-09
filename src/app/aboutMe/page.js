@@ -1,5 +1,6 @@
 "use client";
 import TextTyping from "@/components/TextTyping";
+import Section1 from "@/components/Section1";
 import Section2 from "@/components/Section2";
 import Section3 from "@/components/Section3";
 import Section4 from "@/components/Section4";
@@ -27,7 +28,7 @@ export default function AboutMe() {
     return (
         <main>
             
-            <TextTyping textInput={sentence1} />
+            <Section1 displayText={sentence1} />
             <Section2 displayText={sentence2} />
             <Section3 displayText={sentence3} />
             <Section4 displayText={sentence4} />
