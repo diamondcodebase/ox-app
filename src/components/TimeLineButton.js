@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import "./TimeLineButton.css";
 
-export default function TimeLineButton() {
+export default function TimeLineButton({displayText, displayText2}) {
     const [round, setRound] = useState(0);
 
     return (
@@ -11,12 +11,17 @@ export default function TimeLineButton() {
         height: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
         alignItems: 'center',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
     }}
     >
+        <div className='text-2xl sm:text-4xl font-bold p-20 mt-20'>
+            { displayText }
+        </div>
+        <div className='text-2xl sm:text-4xl font-bold p-30 m-30'>
+            { displayText2 }
+        </div>
         <div className="controls">
             <motion.button
                 whileTap={{ scale: 0.8 }}

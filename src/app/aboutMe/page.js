@@ -1,5 +1,4 @@
 "use client";
-import TextTyping from "@/components/TextTyping";
 import Section1 from "@/components/Section1";
 import Section2 from "@/components/Section2";
 import Section3 from "@/components/Section3";
@@ -29,10 +28,9 @@ export default function AboutMe() {
         <main>
             
             <Section1 displayText={sentence1} />
-            <Section2 displayText={sentence2} />
-            <Section3 displayText={sentence3} />
-            <Section4 displayText={sentence4} />
-            <Section5 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
+            <Section2 displayText={sentence2} displayText2={sentence3} />
+            <Section3 displayText={sentence4} />
+            <Section4 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
             <Section6 displayText={sentence6} />
             <Section7 displayText={sentence7} />
             <Section8 displayText={sentence8} imageSrc={imageSrc8} alt={"work_together"} />
