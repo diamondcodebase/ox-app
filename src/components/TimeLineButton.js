@@ -7,19 +7,19 @@ export default function TimeLineButton({displayText, displayText2}) {
 
     return (
     <div
-    style={{
-        height: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-    }}
+        style={{
+            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+        }}
     >
         <div className='text-2xl sm:text-4xl font-bold p-20 mt-20'>
             { displayText }
         </div>
-        <div className='text-2xl sm:text-4xl font-bold p-30 m-30'>
+        <div className='text-2xl sm:text-4xl font-bold p-20'>
             { displayText2 }
         </div>
         <div className="controls">
@@ -27,7 +27,7 @@ export default function TimeLineButton({displayText, displayText2}) {
                 whileTap={{ scale: 0.8 }}
                 onClick={() => setRound(round+1)}
             >
-            {"Go Further"}
+                {"Click Here!"}
             </motion.button>
         </div>
 
