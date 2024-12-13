@@ -20,7 +20,8 @@ export default function AboutMe() {
     const sentence8 = "Working with teams with different talents, bringing projects to life drive my motivation.";
     const sentence9 = "I would be excited if one day I could work with you, fork~";
 
-    const imageSrc5 = "./gear.gif";
+    const imageSrc4_1 = "./automatic.gif";
+    const imageSrc4_2 = "./robot.png";
     const imageSrc8 = "./work_together.png";
 
 
@@ -30,7 +31,7 @@ export default function AboutMe() {
             <Section1 displayText={sentence1} />
             <Section2 displayText={sentence2} displayText2={sentence3} />
             <Section3 displayText={sentence4} />
-            <Section4 displayText={sentence5} imageSrc={imageSrc5} alt={"rotating"} />
+            <Section4 displayText={sentence5} imageSrc={imageSrc4_1} alt={"automatic"} imageSrc2={imageSrc4_2} alt2={"robot"}/>
             <Section6 displayText={sentence6} />
             <Section7 displayText={sentence7} />
             <Section8 displayText={sentence8} imageSrc={imageSrc8} alt={"work_together"} />
