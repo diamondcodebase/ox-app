@@ -1,31 +1,15 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 export default function RotateSquareButton({displayText}) {
     const [isRotated, setIsRotated] = useState(false);
-    const [backgroundImage, setBackgroundImage] = useState('url("./engineer_lab.png")');
-    const bgRef = useRef(null);
 
     const handleClick = () => {
         setIsRotated((prevState) => !prevState);
-        const newImage = backgroundImage === 'url("./engineer_lab.png")' ? 'url("./software_develop.png")' : 'url("./engineer_lab.png")';
-        let opacity = 0;
-        const interval = setInterval(() => {
-            opacity += 0.01;
-            bgRef.current.style.backgroundImage = `url($(newImage))`;
-            bgRef.current.style.backgroundSize = 'cover';
-            bgRef.current.style.backgroundPosition = 'center';
-            bgRef.current.style.opacity = opacity;
-            if (opacity >= 1) {
-                clearInterval(interval);
-                setBackgroundImage(newImage);
-            }
-        }, 10);        
     };
 
     return (
-        <motion.div ref={bgRef}
-            className="flex flex-col items-center justify-between"
+        <motion.div className="flex flex-col items-center justify-between"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -35,9 +19,9 @@ export default function RotateSquareButton({displayText}) {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                // backgroundImage: isRotated?
-                // 'url("./software_develop.png")'
-                // : 'url("./engineer_lab.png")',
+                backgroundImage: isRotated?
+                'url("./software_develop.png")'
+                : 'url("./engineer_lab.png")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
             }}
@@ -63,7 +47,7 @@ export default function RotateSquareButton({displayText}) {
                     margin: isRotated ? 80 : 80,
                 }}
                 transition={{
-                    duration: 1,
+                    duration: 0.5,
                     ease: 'easeInOut'
                 }}
                 onClick={handleClick}
@@ -76,7 +60,7 @@ export default function RotateSquareButton({displayText}) {
                         scale: isRotated ? 1.25 : 1.5,
                     }}
                     transition={{
-                        duration: 1,
+                        duration: 0.5,
                         ease: 'easeInOut'
                     }}
                 >
