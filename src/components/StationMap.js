@@ -36,10 +36,10 @@ export default function StationMap({displayText, displayText2}) {
                 backgroundPosition: 'center',
             }}
         >
-            <div className='text-2xl sm:text-4xl font-bold p-20 mt-20'>
+            <div className='text-2xl sm:text-4xl font-bold p-5 mt-20'>
                 { displayText }
             </div>
-            <div className='text-2xl sm:text-4xl font-bold p-20'>
+            <div className='text-2xl sm:text-4xl font-bold p-5'>
                 { displayText2 }
             </div>
             <div

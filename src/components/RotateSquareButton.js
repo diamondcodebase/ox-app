@@ -26,18 +26,18 @@ export default function RotateSquareButton({displayText}) {
                 backgroundPosition: 'center',
             }}
         >
-            <div className='text-xl sm:text-3xl font-bold p-3 m-3'>
+            <div className='text-2xl sm:text-4xl font-bold p-3 m-3'>
                 { displayText }
             </div>
             <motion.div 
                 className="flex flex-col items-center justify-center"
                 style={{
-                    width: 200,
-                    height: 200,
+                    width: 150,
+                    height: 150,
                     borderRadius: 40,
                     padding: 10,
                     margin: 10,
-                    cursor: "pointer"
+                    cursor: "pointer",
                 }}
                 animate={{
                     rotate: isRotated ? 0 : 90,
@@ -58,6 +58,9 @@ export default function RotateSquareButton({displayText}) {
                         rotate: isRotated? 0 : -90,
                         padding: isRotated? 10 : 10,
                         scale: isRotated ? 1.25 : 1.5,
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
                     }}
                     transition={{
                         duration: 0.5,
