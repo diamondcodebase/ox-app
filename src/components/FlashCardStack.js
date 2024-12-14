@@ -35,7 +35,7 @@ function Card(props) {
     };
 
     function assignCardText(){
-        return props.index < techArr.length ? techArr[props.index] : "";
+        return props.index < techArr.length ? techArr[props.index] : "What's next?";
     }
 
     function handleDragEnd(_, info) {
