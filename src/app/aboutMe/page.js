@@ -32,9 +32,10 @@ export default function AboutMe() {
             <Section2 displayText={sentence2} displayText2={sentence3} />
             <Section3 displayText={sentence4} />
             <Section4 displayText={sentence5} imageSrc={imageSrc4_1} alt={"automatic"} imageSrc2={imageSrc4_2} alt2={"robot"}/>
-            <Section6 displayText={sentence6} />
-            <Section7 displayText={sentence7} />
-            <Section8 displayText={sentence8} imageSrc={imageSrc8} alt={"work_together"} />
+            <Section5 displayText={sentence6} />
+            <Section6 displayText={sentence7} />
+            <Section7 displayText={sentence8} imageSrc={imageSrc8} alt={"work_together"} />
+            <Section8 />
 
         </main>
     );
