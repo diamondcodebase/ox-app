@@ -145,7 +145,7 @@ export default function FlashCardStack({displayText}) {
                 backgroundSize: 'cover',
             }}
         >
-            <div className='text-xl sm:text-3xl font-bold p-3 m-3'>
+            <div className='text-2xl sm:text-4xl font-bold p-3 m-3'>
                 { displayText }
             </div>
             <motion.div style={{ width: 205, height: '80vh', position: "relative" }}>
