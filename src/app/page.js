@@ -156,7 +156,7 @@ export default function Home() {
             </p>
           </Link>
         
-          <Link
+          {/* <Link
             href={{
               pathname: "/aboutMe",
               query: { currentLanguage: currentLanguage }
@@ -180,7 +180,7 @@ export default function Home() {
             <p className={`m-0 max-w-[30ch] text-lg font-medium opacity-50 text-blue-900`}>
             { contentText.mainpage.aboutMeS }
             </p>
-          </Link>
+          </Link> */}
         </div>
         {/* <div>
           <TextIn content="Hello World" />
