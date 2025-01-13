@@ -24,20 +24,22 @@ export default function BibleQuiz() {
 
     const noOfRound = 5;    
     // using useEffect to generate initial question set
-    const [questionArr, setQuestionArr] = useState([]);
+    const [questions, setQuestions] = useState([]);
 
     // This is for testing, generate questionSet from local memory 
     // useEffect(() => {
-    //     const resultArray = generateRandomQuestionArr();
-    //     setQuestionArr(resultArray);
-    //     // console.log(questionArr);
+    //     const resultArray = generateRandomquestions();
+    //     setquestions(resultArray);
+    //     // console.log(questions);
     // }, []);
 
     // This is method to get questionSet from backend and database
     useEffect(() => {
-            const questionSet = getQuestionSetFromBackend();
-            setQuestionArr(questionSet);
-            console.log(questionArr);
+        fetch("http://localhost:8080/questionset?len=5")
+            .then((data) => data.json())
+            .then((data) => {
+                setQuestions(data);
+            });
         },[]
     );
 
@@ -158,7 +160,7 @@ export default function BibleQuiz() {
     ]
 
     // generate and return an array of random pick questions
-    function generateRandomQuestionArr() {
+    function generateRandomQuestions() {
         const n = questionsSet.length;
         const resultSet = new Set();
         
@@ -169,16 +171,6 @@ export default function BibleQuiz() {
         const resultArr = Array.from(resultSet);
         console.log(resultArr);
         return resultArr;
-    }
-
-    // get the questionset from database
-    async function getQuestionSetFromBackend(){
-        const response = await fetch("http://localhost:8080/questionset?len=5");
-        if(response.ok) {
-            const data = await response.json();
-            return data;
-        }
-        return [];
     }
    
     function getShowAnswer(res){
@@ -211,8 +203,8 @@ export default function BibleQuiz() {
 
     function resetRound(){
         // console.log(round);
-        // console.log(questionArr[round]);
-        var question = questionArr[round];
+        console.log(questions[round]);
+        var question = questions[round];
         setModelAnswer(question.answer);
         setQuestionContent(question.questionText);
         setExplanation(question.answerDetail);           
