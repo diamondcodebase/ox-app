@@ -35,7 +35,7 @@ export default function BibleQuiz() {
 
     // This is method to get questionSet from backend and database
     useEffect(() => {
-        fetch("http://localhost:8080/questionset?len=5")
+        fetch("http://localhost:8080/questionset/bible?len=5")
             .then((data) => data.json())
             .then((data) => {
                 setQuestions(data);
