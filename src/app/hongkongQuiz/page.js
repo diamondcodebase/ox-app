@@ -18,11 +18,24 @@ import { useSearchParams } from "next/navigation";
 import AdvancedButtonPanel from "@/components/AdvancedButtonPanel";
 
 
-export default function BibleQuiz() {
+export default function HongKongQuiz() {
     const searchParams = useSearchParams();
     const currentLanguage = searchParams.get('currentLanguage');
 
     const noOfRound = 5;
+    // using useEffect to generate initial question set
+    const [questions, setQuestions] = useState([]);
+
+    // This is method to get questionSet from backend and database
+    useEffect(() => {
+        fetch("http://localhost:8080/questionset/hongkong?len=5")
+            .then((data) => data.json())
+            .then((data) => {
+                setQuestions(data);
+            });
+        },[]
+    );
+
     const [isGameStarted, setGameStarted] = useState(false);
     const [isGameOver, setGameOver] = useState(false);
 
