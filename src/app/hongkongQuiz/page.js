@@ -8,27 +8,24 @@ import AnswerBox from "@/components/AnswerBox";
 import ImageButton from "@/components/ImageButton";
 import CustomButtonV from "@/components/CustomButtonV";
 import ResultSummary from "@/components/ResultSummary";
+import { BackendPort } from "@/config/config";
 import BasicButtonPanel from "@/components/BasicButtonPanel";
 import Image from "next/image";
 
 // For passing current lang state
 import Link from "next/link"; // import the Link Tag
 import translation from "@/data/translation";
-import { useSearchParams } from "next/navigation";
 import AdvancedButtonPanel from "@/components/AdvancedButtonPanel";
 
 
 export default function HongKongQuiz() {
-    const searchParams = useSearchParams();
-    const currentLanguage = searchParams.get('currentLanguage');
-
     const noOfRound = 5;
     // using useEffect to generate initial question set
     const [questions, setQuestions] = useState([]);
 
     // This is method to get questionSet from backend and database
     useEffect(() => {
-        fetch("http://localhost:8080/questionset/hongkong?len=5")
+        fetch("http://localhost:" + BackendPort + "/questionset/hongkong?len=5")
             .then((data) => data.json())
             .then((data) => {
                 setQuestions(data);
@@ -152,7 +149,7 @@ export default function HongKongQuiz() {
 
     return (
         <body>
-            <header>{currentLanguage}</header>
+            <header></header>
             <main className="flex min-h-screen flex-col items-center justify-between p-12 bg-clip-border"
                 style={{backgroundImage: `url(/hongkongOX_BG.jpg)`,
                     backgroundRepeat: "no-repeat",
@@ -222,7 +219,7 @@ export default function HongKongQuiz() {
                     round = {round}
                     visible = {isGameOver}
                 />
-                <AdvancedButtonPanel currentLanguage={currentLanguage}/> 
+                <AdvancedButtonPanel/> 
             </main>
         </body>
     );

@@ -8,19 +8,8 @@ import Link from "next/link"; // import the Link Tag
 
 // import translation from "@/data/translation";
 import contentText from "@/data/contentText";
-import { useSearchParams } from "next/navigation";
 
 export default function Home() {
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    const latestLanguage = searchParams.get('currentLanguage');
-    console.log(latestLanguage);
-    if(latestLanguage !== null){      
-      setCurrentLanguage(latestLanguage.currentLanguage);
-    }
-  }, [searchParams]);
-
   // Dynamic content rendering
   const posts = [
     {
@@ -42,8 +31,6 @@ export default function Home() {
       following:false
     }
   ];
-  
-  const [currentLanguage, setCurrentLanguage] = useState('en');
 
   return (
     <body>
@@ -60,7 +47,6 @@ export default function Home() {
           <Link
             href={{
               pathname: "/about",
-              query: { currentLanguage: currentLanguage }
             }}   
             className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-green-500 hover:bg-green-200/50"
             rel="noopener noreferrer"
@@ -159,7 +145,6 @@ export default function Home() {
           {/* <Link
             href={{
               pathname: "/aboutMe",
-              query: { currentLanguage: currentLanguage }
             }}   
             className="group rounded-lg border border-transparent px-5 py-4 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 hover:border-blue-500 hover:bg-blue-200/50"
             rel="noopener noreferrer"

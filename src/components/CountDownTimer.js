@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 
 export default function CountDownTimer({ secLimit, visible, running, timeoutFn }) {
-    if(!visible){
-        return <></>
-    }
     const [timeLeft, setTimeLeft] = useState(secLimit);
     const [isRunning, setIsRunning] = useState(true);
-
+    
     useEffect(() => {
         let interval;
         // if timer is still running, using setInterval to reduce a second
@@ -24,6 +21,10 @@ export default function CountDownTimer({ secLimit, visible, running, timeoutFn }
 
         return () => clearInterval(interval);        
     }, [running, timeLeft]);
+
+    if(!visible){
+        return <></>
+    }    
     
     return (
         <div className="countdown-timer">
