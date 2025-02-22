@@ -36,7 +36,7 @@ yarn-error.log*
 next-env.d.ts
 
 # # custom
-# /src/config
+/src/config
 
 # amplify
 node_modules
